@@ -1,0 +1,7 @@
+﻿D:\rabota\modeli_3ddd\GEMMA_SPECIAL_EDITION_PRINTED\Gemma_chair_Baxter\Gemma_chair_Baxter\t$m$p$$$\Gemma_chair_Baxter_2018.max
+D:\rabota\modeli_3ddd\GEMMA_SPECIAL_EDITION_PRINTED\Gemma_chair_Baxter\Gemma_chair_Baxter\t$m$p$$$\MAXFILES.TXT
+C:\Program Files\Autodesk\3ds Max 2018\maps\uvwunwrap\UV_Checker.png
+D:\rabota\modeli_3ddd\GEMMA_SPECIAL_EDITION_PRINTED\Gemma_chair_Baxter\Gemma_chair_Baxter\st_d.jpg
+D:\rabota\modeli_3ddd\GEMMA_SPECIAL_EDITION_PRINTED\Gemma_chair_Baxter\Gemma_chair_Baxter\Mask.jpg
+D:\rabota\modeli_3ddd\GEMMA_SPECIAL_EDITION_PRINTED\Gemma_chair_Baxter\Gemma_chair_Baxter\leather_n.png
+D:\rabota\modeli_3ddd\GEMMA_SPECIAL_EDITION_PRINTED\Gemma_chair_Baxter\Gemma_chair_Baxter\leather_b.png
