@@ -1,26 +1,26 @@
 <template>
     <div class="page-slides">
         <div class="image-slides" :class="$mq">
-            <transition class="slider-body"
-                        name="myanim"
-                        mode="out-in">
+            <transition class="slider-body" name="myanim" mode="out-in">
                 <div v-for="number in [currentNumber]" v-bind:key="number">
                     <img :src="data.slides[currentNumber]" width="100%">
                 </div>
             </transition>
         </div>
         <div class="slide-container" :class="$mq">
-            <transition name="text-anim" mode="out-in" class="text-anim">
+            <transition name="text-anim" mode="out-in">
                 <div v-for="number in [currentNumber]" v-bind:key="number">
                     <span class="slides_text" :class="$mq">{{data.slides_text[currentNumber]}}</span>
-                </div>
+              </div>
             </transition>
         </div>
         <div class="button-box" :class="$mq">
             <button class="btn-slide btn-prev" @click="prev">
-                Смотреть альбом
+                <i class="fas fa-angle-left"></i>
             </button>
-
+            <button class="btn-slide btn-next" @click="next">
+                <i class="fas fa-angle-right"></i>
+            </button>
         </div>
     </div>
 </template>
@@ -29,18 +29,13 @@
         data() {
             return {
                 data: {
-                    // [{slide: , slideText}, {}]
                     slides: [
-                        'src/assets/img/bouquet1.jpg',
-                        'src/assets/img/bouquet2.jpg',
-                        'src/assets/img/bouquet3.jpg',
-                        'src/assets/img/bouquet4.jpg'
+                        'src/assets/img/portfolio-slider1.jpg',
+                        'src/assets/img/portfolio-slider2.jpg',
                     ],
                     slides_text: [
                         'Flowers',
-                        'Corporate',
-                        'Balerun',
-                        'Shmalerun'
+                        'Weddings',
                     ]
                 },
                 currentNumber: 0,
@@ -68,11 +63,6 @@
                 let oneStep = 600 / this.data.slides.length;
                 return oneStep * (this.currentNumber + 1)
             }
-        },
-        mounted: function () {
-            setInterval(() => {
-                this.next();
-            }, 5000);
         }
     }
 
@@ -81,93 +71,56 @@
     @import "../assets/scss/variables";
     .page-slides {
         display: flex;
-        justify-content: space-around;
+        justify-content: center;
         width: 100%;
         height: 85vh;
         margin-top: 5vh;
         align-items: center;
+        position: relative;
     }
     span.slides_text {
-        font-family: $font-h1;
-        font-size: 20vh;
-        &.mobile {
-            font-size: 20px;
-        }
+        font-family: $font-h2;
+        font-size: 15vw;
     }
     .image-slides {
         display: flex;
-        flex-direction: column;
         justify-content: center;
-        width: 100%;
-        height: 100%;
+        width: 40%;
         overflow: hidden;
-        position: absolute;
-        top: 0;
-       &.tablet {
-            width: 90%;
-        }
-        &.mobile {
-            width: 100%;
-        }
+        transition: all 0.3s ease;
     }
-    .image-slides:hover {
-        filter: none;
+    .image-slides img {
+        width: 65%;
     }
     .slide-container {
         position: absolute;
         display: flex;
         align-items: center;
-        justify-content: space-around;
-        flex-direction: column;
-        width: 40%;
-        height: 50vh;
-        &.laptop {
-            width: 70%;
-            height: 60vh;
-        }
-        &.tablet {
-            width: 90%;
-            height: 80vh;
-        }
-        &.mobile {
-            width: 90%;
-            height: 100vh;
-        }
-    }
-    .slide-container p {
+        justify-content: center;
         width: 80%;
-        font-family: $font-text;
-        font-size: 16px;
-        margin: auto;
-        line-height: 1.5;
-        &.mobile {
-            font-size: 13px;
-        }
+        z-index: -1;
+    }
+
+    .btn-slide {
+        border: 1px solid white;
+        z-index: 1;
+        top: 0;
+        width: 50px;
+        height: 50px;
     }
     .button-box {
         position: absolute;
-        top: 76%;
-        right: 44%;
+        top: 90%;
+        right: 10%;
         display: flex;
-        justify-content: center;
-        width: 150px;
-        height: 150px;
-        border: 1px solid white;
-        border-radius: 100%;
-        align-items: center;
+        justify-content: space-between;
+        width: 80%;
     }
     .myanim-enter-active {
-        animation: myanim ease-in-out 2s;
+        animation: myanim ease 1s;
     }
     .myanim-leave-active {
-        animation: myanimout ease-in-out 2s;
-    }
-    .text-anim-enter-active {
-        animation: text-anim ease-in-out 2s;
-    }
-    .text-anim-leave-active {
-        animation: text-anim-out ease-in-out 2s;
-
+        animation: myanimout ease 1s;
     }
     a.slide-a {
         display: flex;
@@ -186,49 +139,30 @@
     }
     @keyframes myanim {
         0% {
-            transform: scale(0.5);
-            -webkit-clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
-            clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
-        }
-        50% {
-            transform: scale(0.5);
-            -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            -webkit-clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+            clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
         }
         100% {
-            transform: scale(1);
+            -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
         }
     }
     @keyframes myanimout {
         0% {
-            transform: scale(1);
-        }
-        50% {
-            transform: scale(0.5);
-            -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
         }
         100% {
-            -webkit-clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
-            clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
-            transform: scale(0.5);
+            -webkit-clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+            clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
         }
     }
-    @keyframes text-anim {
-        0% {
-            transform: translateX(160%);
-        }
-        100% {
-            transform: translateX(0) scale(1);
-        }
+    .pageanim-enter-active {
+        animation: pageanim ease 1s;
     }
-    @keyframes text-anim-out {
-        0% {
-            transform: translateX(0) scale(1);
-        }
-        100% {
-            transform: translateX(-160%);
-        }
+    .pageanim-leave-active {
+        animation: pageanimout ease 1s;
     }
+
 
 </style>

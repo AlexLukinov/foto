@@ -1,6 +1,5 @@
 <template>
     <div class="page services_page">
-        <slides-services></slides-services>
         <div class="page-nav">
             <div class="page-nav-number">
                 <span class="number-big" :class="$mq">03/</span>

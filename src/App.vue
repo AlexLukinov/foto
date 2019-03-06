@@ -1,6 +1,5 @@
 <template>
     <div id="app" @wheel="onWheel">
-        <my-header></my-header>
         <transition name="router-anim">
             <router-view></router-view>
         </transition>

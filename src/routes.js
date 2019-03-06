@@ -3,11 +3,9 @@ import Home from  './page/Home.vue'
 import AboutUs from  './page/AboutUs.vue'
 import Services from  './page/Services.vue'
 import Portfolio from  './page/Portfolio.vue'
-import Team from  './page/Team.vue'
 import Contacts from  './page/Сontacts.vue'
 import Blog from  './page/Blog.vue'
-import Article from  './page/Article.vue'
-import Menu from  './page/Menu.vue'
+
 
 export default new VueRouter ({
         routes: [
@@ -26,10 +24,6 @@ export default new VueRouter ({
             {
                 path: '/portfolio',
                 component: Portfolio
-            },
-            {
-                path: '/team',
-                component: Team
             },
             {
                 path: '/contacts',
