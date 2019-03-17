@@ -1,22 +1,25 @@
 <template>
     <transition name="menu-anim" mode="out-in">
         <div class="page page-menu">
-               <div class="menu-list">
+            <headerMenuMobile></headerMenuMobile>
+               <div class="menu-list" :class="$mq">
                    <div class="menu-left-column" :class="$mq">
-                       <div class="menu-header">
+                       <div class="menu-header" :class="$mq">
                            <div class="logo">
                                <img class="menu-logo" src="src/assets/img/logo.png" alt="Букетное Бюро">
                            </div>
                        </div>
-                       <div class="my-nav">
+                       <div class="my-nav" :class="$mq">
                            <router-link to="/">
                                <button>
-                                   <span class="nav-item">главная</span>
+                                   <span class="nav-item" :class="$mq">главная</span>
                                </button>
                            </router-link>
                            <router-link to="/">
                                <button>
-                                   <span class="nav-item" @click="toggleIsActive('services')">наши услуги
+                                   <span class="nav-item"
+                                         :class="$mq"
+                                         @click="toggleIsActive('services')">наши услуги
                                        <span class="nav-item-span">
                                          <span @click="toggleIsActive('services')"
                                                class="vertical-line"
@@ -27,82 +30,87 @@
                                    </span>
                                </button>
                            </router-link>
-                           <div v-if="isActiveServices">
-                               <router-link to="/">
-                                   <button>
-                                   <span class="nav-item nav-item-inner">
+                           <transition name="roll" mode="out-in">
+                               <div v-if="isActiveServices">
+                                   <router-link to="/">
+                                       <button>
+                                   <span class="nav-item nav-item-inner" :class="$mq">
                                        <span class="nav-item-span">
-                                         <span class="vertical-line"></span>
-                                         <span class="horizontal-line"></span>
+                                         <span class="vertical-line" :class="$mq"></span>
+                                         <span class="horizontal-line" :class="$mq"></span>
                                        </span>
                                        Букеты и композиции
                                    </span>
-                                   </button>
-                               </router-link>
-                               <router-link to="/">
-                                   <button>
-                                   <span class="nav-item nav-item-inner">
+                                       </button>
+                                   </router-link>
+                                   <router-link to="/">
+                                       <button>
+                                   <span class="nav-item nav-item-inner" :class="$mq">
                                        <span class="nav-item-span">
-                                         <span class="vertical-line"></span>
-                                         <span class="horizontal-line"></span>
+                                         <span class="vertical-line" :class="$mq"></span>
+                                         <span class="horizontal-line" :class="$mq"></span>
                                        </span>
                                        Свадебная флористика и декор
                                    </span>
-                                   </button>
-                               </router-link>
-                               <router-link to="/">
-                                   <button>
-                                   <span class="nav-item nav-item-inner">
+                                       </button>
+                                   </router-link>
+                                   <router-link to="/">
+                                       <button>
+                                   <span class="nav-item nav-item-inner" :class="$mq">
                                        <span class="nav-item-span">
-                                         <span class="vertical-line"></span>
-                                         <span class="horizontal-line"></span>
+                                         <span class="vertical-line" :class="$mq"></span>
+                                         <span class="horizontal-line" :class="$mq"></span>
                                        </span>
                                        Оформление мероприятий
                                    </span>
-                                   </button>
-                               </router-link>
-                               <router-link to="/">
-                                   <button>
-                                   <span class="nav-item nav-item-inner">
+                                       </button>
+                                   </router-link>
+                                   <router-link to="/">
+                                       <button>
+                                   <span class="nav-item nav-item-inner" :class="$mq">
                                        <span class="nav-item-span">
-                                         <span class="vertical-line"></span>
-                                         <span class="horizontal-line"></span>
+                                         <span class="vertical-line" :class="$mq"></span>
+                                         <span class="horizontal-line" :class="$mq"></span>
                                        </span>
                                        Отели и корпоративные клиенты
                                    </span>
-                                   </button>
-                               </router-link>
-                               <router-link to="/">
-                                   <button>
-                                   <span class="nav-item nav-item-inner">
+                                       </button>
+                                   </router-link>
+                                   <router-link to="/">
+                                       <button>
+                                   <span class="nav-item nav-item-inner" :class="$mq">
                                        <span class="nav-item-span">
-                                         <span class="vertical-line"></span>
-                                         <span class="horizontal-line"></span>
+                                         <span class="vertical-line" :class="$mq"></span>
+                                         <span class="horizontal-line" :class="$mq"></span>
                                        </span>
                                        Ритуальная флористика
                                    </span>
-                                   </button>
-                               </router-link>
-                               <router-link to="/">
-                                   <button>
-                                   <span class="nav-item nav-item-inner">
+                                       </button>
+                                   </router-link>
+                                   <router-link to="/">
+                                       <button>
+                                   <span class="nav-item nav-item-inner" :class="$mq">
                                        <span class="nav-item-span">
-                                         <span class="vertical-line"></span>
-                                         <span class="horizontal-line"></span>
+                                         <span class="vertical-line" :class="$mq"></span>
+                                         <span class="horizontal-line" :class="$mq"></span>
                                        </span>
                                        Мастер-классы
                                    </span>
-                                   </button>
-                               </router-link>
-                           </div>
+                                       </button>
+                                   </router-link>
+                               </div>
+                           </transition>
+
                            <router-link to="/aboutUs">
                                <button>
-                                   <span class="nav-item">о нас</span>
+                                   <span class="nav-item" :class="$mq">о нас</span>
                                </button>
                            </router-link>
                            <router-link to="/">
                                <button>
-                                   <span class="nav-item" @click="toggleIsActive('blog')" >блог
+                                   <span class="nav-item"
+                                         :class="$mq"
+                                         @click="toggleIsActive('blog')" >блог
                                        <span class="nav-item-span">
                                          <span class="vertical-line" :style="lineBlogHeight"></span>
                                          <span @click="toggleIsActive('blog')" class="horizontal-line"></span>
@@ -110,50 +118,61 @@
                                    </span>
                                </button>
                            </router-link>
-                           <div v-if="isActiveBlog">
-                               <router-link to="/">
-                                   <button>
-                                   <span class="nav-item nav-item-inner">
+                           <transition name="roll" mode="out-in">
+                               <div v-if="isActiveBlog">
+                                   <router-link to="/">
+                                       <button>
+                                   <span class="nav-item nav-item-inner" :class="$mq">
                                        <span class="nav-item-span">
-                                         <span class="vertical-line"></span>
-                                         <span class="horizontal-line"></span>
+                                         <span class="vertical-line" :class="$mq"></span>
+                                         <span class="horizontal-line" :class="$mq"></span>
                                        </span>
                                        Наши истории
                                    </span>
-                                   </button>
-                               </router-link>
-                               <router-link to="/">
-                                   <button>
-                                   <span class="nav-item nav-item-inner">
+                                       </button>
+                                   </router-link>
+                                   <router-link to="/">
+                                       <button>
+                                   <span class="nav-item nav-item-inner" :class="$mq">
                                        <span class="nav-item-span">
-                                        <span class="vertical-line"></span>
-                                         <span class="horizontal-line"></span>
+                                        <span class="vertical-line" :class="$mq"></span>
+                                         <span class="horizontal-line" :class="$mq"></span>
                                        </span>
                                        Другие статьи
                                    </span>
-                                   </button>
-                               </router-link>
-                           </div>
+                                       </button>
+                                   </router-link>
+                               </div>
+                           </transition>
                            <router-link to="/contacts">
                                <button>
-                                   <span class="nav-item">контакты</span>
+                                   <span class="nav-item" :class="$mq">контакты</span>
                                </button>
                            </router-link>
                        </div>
-                       <div class="contacts">
+                       <div class="contacts" :class="$mq">
                            <a href="" class="a-text" :class="$mq">Facebook</a>
                            <a href="" class="a-text" :class="$mq">Vk</a>
-                           <a href="" class="a-text" :class="$mq">Instagram</a>
+                           <a href="" class="a-text mr-0" :class="$mq">Instagram</a>
                        </div>
                    </div>
-                   <div class="menu-right-column">
+                   <div class="menu-right-column" :class="$mq">
                        <img src="src/assets/img/close.png"
+                            :class="$mq"
                             class="menu-close"
                             @click="$emit('close')"
                             alt="Букетное бюро">
-                       <div class="arrow-around arrow-rotate" @click="toggleIsActive('developers')">
-                           <img class="around" src="src/assets/img/around.png" alt="Буектное бюро">
-                           <img class="arrow arrow-left" src="src/assets/img/arrow-left.png" alt="Буектное бюро">
+                       <div class="arrow-around arrow-rotate"
+                            :class="$mq"
+                            @click="toggleIsActive('developers')">
+                           <img class="around"
+                                :class="$mq"
+                                src="src/assets/img/around.png"
+                                alt="Буектное бюро">
+                           <img class="arrow arrow-left"
+                                :class="$mq"
+                                src="src/assets/img/arrow-left.png"
+                                alt="Буектное бюро">
                        </div>
                        <div class="lang" :class="$mq">
                            <span :class="$mq">en</span>
@@ -161,30 +180,34 @@
                            <span class="lang-active" :class="$mq">ru</span>
                        </div>
                    </div>
-                   <div class="developers-column"  v-if="isActiveDevelopers">
-                       <div class="developers">
-                           <div class="nav-item">DEVELOPERS</div>
-                           <div class="developers-list">
-                               <a href="" class="a-text" :class="$mq">Web design:<br>
-                                   <span class="developers-name">
+                   <transition name="slide-right" mode="out-in">
+                       <div class="developers-column"
+                            :class="$mq"
+                            v-if="isActiveDevelopers">
+                           <div class="developers" :class="$mq">
+                               <div class="nav-item" :class="$mq">DEVELOPERS</div>
+                               <div class="developers-list">
+                                   <a href="" class="a-text" :class="$mq">Web design:<br>
+                                       <span class="developers-name" :class="$mq">
                                       Helen Tihomolova
                                    </span>
-                               </a>
-                               <a href="" class="a-text" :class="$mq">Front end:<br>
-                                   <span class="developers-name">
+                                   </a>
+                                   <a href="" class="a-text" :class="$mq">Front end:<br>
+                                       <span class="developers-name" :class="$mq">
                                        Ekaterina Lukinova
                                    </span>
-                               </a>
-                               <a href="" class="a-text" :class="$mq">Back end:<br>
-                                   <span class="developers-name">
+                                   </a>
+                                   <a href="" class="a-text" :class="$mq">Back end:<br>
+                                       <span class="developers-name" :class="$mq">
                                        Alexey Lukinov
                                    </span>
-                               </a>
-                           </div>
-                           <span class="a-text">2019</span>
+                                   </a>
+                               </div>
+                               <span class="a-text">2019</span>
 
+                           </div>
                        </div>
-                   </div>
+                   </transition>
                </div>
 
         </div>
@@ -254,8 +277,9 @@
         box-shadow: 5px 0 40px -5px #333;
         position: relative;
         &.mobile {
-            margin: 15vh 0 0 50%;
-            width: 50%;
+            width: 100%;
+            flex-direction: row-reverse;
+            justify-content: flex-end;
         }
     }
     .menu-left-column {
@@ -265,11 +289,26 @@
         flex-direction: column;
         justify-content: space-between;
         margin-left: 16%;
+        &.mobile {
+            margin-left: 0%;
+            height: 75%;
+            border-left: 1px solid #dacfb1;
+            justify-content: center;
+        }
+    }
+    .header {
+        display: none;
+        &.mobile {
+            display: flex;
+        }
     }
     .menu-header {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        &.mobile {
+            display: none;
+        }
     }
     .logo {
         width: 28%;
@@ -287,6 +326,9 @@
         font-size: 1.25vw;
         margin-block-end: 0.5em;
         margin-block-start: 0.5em;
+        &.mobile {
+            font-size: 2.5vh;
+        }
     }
     .my-nav {
         width: 80%;
@@ -296,14 +338,27 @@
         align-items: flex-start;
         align-self: flex-start;
         margin-bottom: 5%;
+        &.mobile {
+           align-self: center;
+           margin-bottom: 0%;
+        }
     }
     .contacts {
         width: 100%;
         display: flex;
         justify-content: space-between;
+        &.mobile {
+            position: absolute;
+            width: 82%;
+            top: 95vh;
+            left: 8%;
+        }
     }
     .contacts .a-text {
         margin-left: 0;
+        &.mobile {
+            font-size: 2.6vh;
+        }
     }
     .menu-right-column {
         width: 22%;
@@ -314,9 +369,17 @@
         justify-content: space-between;
         align-items: center;
         z-index: 2;
+        &.mobile {
+            border: none;
+            justify-content: center;
+        }
     }
     .arrow-around {
         margin-left: 15%;
+        &.mobile {
+            transform: rotate(180deg);
+            margin-left: 10%;
+        }
     }
     .menu-anim-enter-active {
         animation: coming 1s;
@@ -328,6 +391,9 @@
     }
     .menu-close {
         margin-top: 35%;
+        &.mobile {
+            display: none;
+        }
     }
 
     .lang {
@@ -336,6 +402,9 @@
         align-items: center;
         justify-content: space-between;
         margin-bottom: 5vh;
+        &.mobile {
+            display: none;
+        }
     }
     .lang span {
         font-family: $font-element;
@@ -345,15 +414,6 @@
         cursor: pointer;
         color: $text-color;
         margin: 5px;
-        /*&.laptop {*/
-            /*font-size: 26px;*/
-        /*}*/
-        /*&.tablet {*/
-            /*font-size: 22px;*/
-        /*}*/
-        /*&.mobile {*/
-            /*font-size: 20px;*/
-        /*}*/
     }
     span.lang-active {
         color: #a37855;
@@ -363,15 +423,6 @@
         height: 1vh;
         background-color: $text-color;
         margin-bottom: 6px;
-        /*&.laptop {*/
-            /*height: 8px;*/
-        /*}*/
-        /*&.tablet {*/
-        /*font-size: 22px;*/
-        /*}*/
-        /*&.mobile {*/
-        /*font-size: 20px;*/
-        /*}*/
     }
     .nav-item-span {
         width: 11px;
@@ -384,7 +435,6 @@
         transition-duration: 0.35s;
         transition-timing-function: ease;
     }
-
     .vertical-line {
         width: 1px;
         height: 11px;
@@ -392,8 +442,12 @@
         position: absolute;
         top: 0;
         left: 5px;
-        /*animation: vertical-line 0.5s ease;*/
         transition: height 200ms ease;
+        &.mobile {
+            height: 7px;
+            top: 3px;
+            left: 3px;
+        }
     }
     @keyframes vertical-line {
         0% {
@@ -422,6 +476,10 @@
         top: 5px;
         height: 1px;
         background-color: black;
+        &.mobile {
+            width: 7px;
+            top: 6px;
+        }
     }
     .menu-anim-enter-active {
         animation: coming 1s;
@@ -459,6 +517,9 @@
         font-size: 0.9vw;
         margin-block-end: 1em;
         margin-block-start:1em;
+        &.mobile {
+            font-size: 1.5vh;
+        }
     }
     .nav-item-inner:hover {
         color: #a37855;
@@ -471,6 +532,12 @@
         width: 100%;
         height: 100%;
         background-color: #fcfcfc;
+        &.mobile {
+            height: 75%;
+            margin-left: 22%;
+            border-left: 1px solid #dacfb1;
+
+        }
     }
     .developers {
         width: 100%;
@@ -481,6 +548,10 @@
         justify-content: space-between;
         align-items: flex-start;
         margin-left: 15%;
+        &.mobile {
+            margin-left: 10%;
+            height: 65%;
+        }
     }
     .developers-list {
         display: flex;
@@ -497,5 +568,79 @@
     .developers-name {
         font-family: Montserrat-Medium;
         font-size: 0.8vw;
+        &.mobile {
+            font-size: 1.5vh;
+        }
+    }
+    .roll-enter-active {
+        animation: roll-in ease-in 0.5s;
+    }
+    .roll-leave-active {
+        animation: roll-out ease-out 0.5s;
+    }
+    @keyframes roll-in {
+        0% {
+            -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        }
+        100% {
+            -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        }
+    }
+    @keyframes roll-out {
+        0% {
+            -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        }
+        100% {
+            -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        }
+    }
+    .slide-right-enter-active {
+        animation: slide-right-in cubic-bezier(1.0, 0.6, 0.9, 1.0) 1s;
+    }
+    .slide-right-leave-active {
+        animation: slide-right-out cubic-bezier(1.0, 0.6, 0.9, 1.0) 1s;
+    }
+    @keyframes slide-right-in {
+        0% {
+            -webkit-clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+            clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+        }
+        100% {
+            -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        }
+    }
+    @keyframes slide-right-out {
+        0% {
+            -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        }
+        100% {
+            -webkit-clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+            clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+        }
+    }
+    .around {
+        &.mobile {
+            width: 40%;
+        }
+    }
+    .arrow-left {
+        &.mobile {
+            width: 40%;
+            margin-left: -13px;
+        }
+    }
+    .mr-0 {
+        margin-right: 0;
+    }
+    .a-text {
+        &.mobile {
+            font-size: 2.2vh;
+        }
     }
 </style>

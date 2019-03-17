@@ -2,15 +2,16 @@
     <div class="page portfolio_page">
         <headerWidthBack></headerWidthBack>
         <slidesPortfolio></slidesPortfolio>
+        <info></info>
     </div>
 </template>
 <script>
 
     export default {
         data () {
-            return {
-            }
+            return{}
         }
+
     }
 </script>
 
@@ -18,7 +19,7 @@
     @import "../assets/scss/variables";
     .portfolio_page {
         overflow: hidden;
+        height: auto;
     }
-
 
 </style>

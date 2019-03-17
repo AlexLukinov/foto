@@ -8,20 +8,24 @@ import Menu from './page/Menu.vue'
 import Header from './page/Header.vue'
 import Previu from './page/Previu.vue'
 import HeaderWidthBack from './page/HeaderWidthBack.vue'
+import HeaderMenuMobile from './page/HeaderMenuMobile.vue'
 import Footer from './page/Footer.vue'
 import VueRouter from 'vue-router'
 import router from './routes'
 import VueMq from 'vue-mq'
-import VueAgile from 'vue-agile'
+import VueGallerySlideshow from 'vue-gallery-slideshow'
+import Info from './page/Info.vue'
 
-Vue.use(VueAgile);
-Vue.use(VueRouter);
+Vue.component('Info', Info);
 Vue.component('slidesPortfolio', SlidesPortfolio);
+Vue.use(VueRouter);
+Vue.component('VueGallerySlideshow', VueGallerySlideshow);
 Vue.component('slidesHome', SlidesHome);
 Vue.component('modal-order', ModalOrder);
 Vue.component('my-menu', Menu);
 Vue.component('my-header', Header);
 Vue.component('headerWidthBack', HeaderWidthBack);
+Vue.component('headerMenuMobile', HeaderMenuMobile);
 Vue.component('my-footer', Footer);
 Vue.component('previu', Previu);
 

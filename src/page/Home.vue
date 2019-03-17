@@ -1,7 +1,7 @@
 <template>
     <div class="page home_page" :class="$mq">
        <my-header :class="$mq"></my-header>
-        <headerWidthCall :class="$mq"></headerWidthCall>
+        <!--<headerWidthCall :class="$mq"></headerWidthCall>-->
         <slides-home></slides-home>
         <my-footer :class="$mq"></my-footer>
     </div>

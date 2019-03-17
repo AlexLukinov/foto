@@ -1,9 +1,9 @@
 <template>
     <div class="page contacts-page" :class="$mq">
         <headerWidthBack></headerWidthBack>
-        <div class="about-page-block">
-            <div class="content-left">
-                <div class="contacts-block-p">
+        <div class="about-page-block" :class="$mq">
+            <div class="content-left m-dn" :class="$mq">
+                <div class="contacts-block-p" :class="$mq">
                     <p>Не нашли ответ на свой вопрос? Задайте его нам!<br>
                         У вас есть предложение или комментарий к нашей работе? Оставьте<br>свой отзыв!
                     </p>
@@ -35,80 +35,127 @@
                     </div>
                 </div>
             </div>
-            <div class="content-right">
-                <div class="contacts-block-p contacts-block-border jcfe">
-                    <p>АДРЕС<br>
+            <div class="content-right content-right-mobile" :class="$mq">
+                <div class="contacts-block-p contacts-block-border jcfe" :class="$mq">
+                    <p :class="$mq">АДРЕС<br>
                         г.Севастополь , Пл. Восставших 4, ТК «Новый бульвар».<br>
-                        Для вашего удобства бесплатная гостевая парковка 30"
+                        <span class="m-dn" :class="$mq">
+                            Для вашего удобства бесплатная гостевая парковка 30"
+                        </span>
                     </p>
                 </div>
-                <div class="contacts-block-p contacts-block-border">
-                    <p>ТЕЛЕФОН<br>
+                <div class="contacts-block-p contacts-block-border" :class="$mq">
+                    <p :class="$mq">ТЕЛЕФОН<br>
                         + 7 (978) 214 45 05 (Viber,Telegram,WhatsApp)
                     </p>
                 </div>
-                <div class="contacts-block-p contacts-block-border">
-                    <p>EMAIL<br>
+                <div class="contacts-block-p contacts-block-border" :class="$mq">
+                    <p :class="$mq">EMAIL<br>
                         buketnoe_buro@mail.ru
                     </p>
                 </div>
-                <div class="contacts-block-p contacts-block-border">
-                    <p>СОЦИАЛЬНЫЕ СЕТИ</p>
-                    <div class="contacts">
+                <div class="contacts-block-p contacts-block-border" :class="$mq">
+                    <p :class="$mq">СОЦИАЛЬНЫЕ СЕТИ</p>
+                    <div class="contacts" :class="$mq">
                         <a href="" class="a-text" :class="$mq">Facebook</a>
                         <a href="" class="a-text" :class="$mq">Vk</a>
                         <a href="" class="a-text" :class="$mq">Instagram</a>
                     </div>
                 </div>
             </div>
-            <div class="slide_line">
+            <div class="see-album-line" :class="$mq">
+                <div class="see-album-circle" :class="$mq"></div>
+                <div class="album-line" :class="$mq"></div>
+                <div class="see-album-circle" :class="$mq"></div>
+                <div class="horizontal-divider" :class="$mq"></div>
+            </div>
+            <div class="slide_line" :class="$mq">
                 <span class="slide_line_span">01</span>
                 <div class="slide-progress"></div>
                 <span class="slide_line_span" >02</span>
             </div>
-            <div class="scroll-element">
+            <div class="scroll-element" :class="$mq">
                 <img src="src/assets/img/arrow-right.png" alt="Буектное бюро">
                 <div class="text-element">SCROLL</div>
             </div>
         </div>
-        <div class="page-contacts-block-info">
-            <div class="info-column">
-                <div class="contacts-block-p">
-                    <p>Работаем по всему Крыму и за его пределами</p>
+        <div class="page-contacts-block-info" :class="$mq">
+            <div class="info-column" :class="$mq">
+                <div class="contacts-block-p" :class="$mq">
+                    <p :class="$mq">Работаем по всему Крыму и за его пределами</p>
                 </div>
-                <div class="contacts-block-p">
-                    <p>Студия открыта с 9.00 до 18.00
+                <div class="contacts-block-p" :class="$mq">
+                    <p :class="$mq">Студия открыта с 9.00 до 18.00
                         (воскресенье выходной)</p>
                 </div>
-                <div class="contacts-block-p">
-                    <p>Мы говорим на RUS, ENG, FR <br> языках</p>
+                <div class="contacts-block-p" :class="$mq">
+                    <p :class="$mq">Мы говорим на RUS, ENG, FR <br> языках</p>
                 </div>
             </div>
-            <div class="info-column">
-                <div class="contacts-block-p">
-                    <p>Всегда на связи по телефону и мессенджерам</p>
+            <div class="info-column" :class="$mq">
+                <div class="contacts-block-p" :class="$mq">
+                    <p :class="$mq">Всегда на связи по телефону и мессенджерам</p>
                 </div>
-                <div class="contacts-block-p">
-                    <p>Курьерская доставка. Различные формы оплаты.</p>
+                <div class="contacts-block-p" :class="$mq">
+                    <p :class="$mq">Курьерская доставка. Различные формы оплаты.</p>
                 </div>
-                <div class="contacts-block-p">
-                    <p>Смотреть БУКЕТНОЕ БЮРО <br>
+                <div class="contacts-block-p" :class="$mq">
+                    <p id="card" :class="$mq">Смотреть БУКЕТНОЕ БЮРО <br>
                         на карте
-                        <span class="arrow-element">
+                        <span class="arrow-element" :class="$mq">
                             <img src="src/assets/img/arrow-right.png" alt="Букетное бюро">
                         </span>
                     </p>
                 </div>
             </div>
-        </div>
-        <div class="about-page-block aifs">
-            <div class="media-block">
-                <div class="media-block-columns columns-border-bottom"></div>
-                <div class="media-block-columns">
-                    <h3>INSTAGRAM</h3>
-                    <div class="text-element">@buketnoe_buro</div>
+            <div class="content-left d-dn" :class="$mq">
+                <div class="contacts-block-p" :class="$mq">
+                    <p :class="$mq">Не нашли ответ на свой вопрос? Задайте его нам!<br>
+                        У вас есть предложение или комментарий к нашей работе? Оставьте<br>свой отзыв!
+                    </p>
                 </div>
-                <div class="media-block-columns media-block-photo">
+                <div class="contacts-form" :class="$mq">
+                    <div class="contacts-input-block" :class="$mq">
+                        <div class="modal-input" :class="$mq">
+                            <input type="text" :class="$mq" placeholder="Имя">
+                        </div>
+                        <div class="modal-input" :class="$mq">
+                            <input type="email" :class="$mq" placeholder="Email">
+                        </div>
+                    </div>
+                    <div class="contacts-input-block">
+                        <div class="modal-input" :class="$mq">
+                            <input type="text" :class="$mq" placeholder="Телефон">
+                        </div>
+                        <div class="modal-input" :class="$mq">
+                            <input type="email" :class="$mq" placeholder="Город">
+                        </div>
+                    </div>
+                    <div class="contacts-textarea-block" :class="$mq">
+                        <textarea rows="10"
+                                  cols="30"
+                                  name="text"
+                                  :class="$mq"
+                                  placeholder="Сообщение">
+                        </textarea>
+                    </div>
+                    <div class="contacts-input-block submit-mobile" :class="$mq">
+                        <div class="modal-input input-submit" :class="$mq">
+                            <input type="submit" :class="$mq" placeholder="Отправить">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="about-page-block aifs" :class="$mq">
+            <div class="media-block" :class="$mq">
+                <div class="media-block-columns columns-border-bottom" :class="$mq"></div>
+                <div class="media-block-columns" :class="$mq">
+                    <h3 :class="$mq">INSTAGRAM</h3>
+                    <div class="media-block-line" :class="$mq"></div>
+                    <div class="text-element" :class="$mq">@buketnoe_buro</div>
+                </div>
+                <div class="media-block-columns media-block-photo" :class="$mq">
                     <div class="photo-container">
                         <a href="#" class="photo-a">
                             <img src="src/assets/img/instagram-photo1.jpg" alt="@buketnoe_buro">
@@ -143,19 +190,19 @@
                     </div>
                 </div>
             </div>
-            <div class="slide_line slide_line-media">
+            <div class="slide_line slide_line-media" :class="$mq">
                 <span class="slide_line_span">02</span>
                 <div class="slide-progress"></div>
                 <span class="slide_line_span" >02</span>
             </div>
-            <div class="scroll-element">
+            <div class="scroll-element" :class="$mq">
                 <img src="src/assets/img/arrow-left.png" alt="Буектное бюро">
                 <div class="text-element">TO TOP</div>
             </div>
         </div>
-        <div class="media-block">
-            <div class="media-block-columns columns-border-top">
-                <img src="src/assets/img/previu.png" alt="Буектное бюро">
+        <div class="media-block" :class="$mq">
+            <div class="media-block-columns columns-border-top" :class="$mq">
+                <img src="src/assets/img/previu.png" :class="$mq" alt="Буектное бюро">
             </div>
         </div>
     </div>
@@ -178,6 +225,11 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        &.mobile {
+            height: auto;
+            margin-top: 6vh;
+            flex-direction: column;
+        }
     }
     .content-right, .content-left {
         width: 40%;
@@ -186,6 +238,21 @@
         flex-direction: column;
         justify-content: space-between;
         border-top: 1px solid #dacfb1;
+        &.mobile {
+            width: 100%;
+            height: auto;
+        }
+    }
+    .content-left {
+        &.mobile {
+            border: none;
+        }
+    }
+    .content-right-mobile {
+        &.mobile {
+            padding-top: 8vh;
+
+        }
     }
     .slide_line {
         display: flex;
@@ -196,6 +263,9 @@
         position: absolute;
         left: 4%;
         width: 20px;
+        &.mobile {
+            display: none;
+        }
     }
     .slide-progress {
         z-index: 1;
@@ -220,6 +290,9 @@
         right: 0;
         bottom: 10vh;
         height: max-content;
+        &.mobile {
+            display: none;
+        }
     }
     .scroll-element img {
         margin-bottom: 4px;
@@ -231,9 +304,17 @@
         height: 25%;
         display: flex;
         align-items: flex-end;
+        &.mobile {
+            width: 70%;
+            margin: auto;
+        }
     }
     .contacts-block-p p {
         font-size: 1vw;
+        &.mobile {
+            font-size: 2.2vh;
+            text-align: center;
+        }
     }
     .contacts-form {
         display: flex;
@@ -241,6 +322,12 @@
         justify-content: space-between;
         height: 75%;
         margin-right: 5%;
+        &.mobile {
+            height: 50vh;
+            min-height: 45vh;
+            margin: auto;
+            width: 95%;
+        }
     }
     .contacts-input-block {
         display: flex;
@@ -255,9 +342,10 @@
         align-items: flex-start;
         width: 45%;
         height: 80%;
-        /*&.mobile {*/
-            /*width: 80%;*/
-        /*}*/
+        &.mobile {
+           height: 45px;
+           align-items: center;
+        }
     }
     .modal-input input {
         width: 95.5%;
@@ -268,11 +356,18 @@
         font-family: $font-text;
         background-color: transparent;
         color: #333333;
+        &.mobile {
+            font-size: 2.2vh;
+        }
     }
     .contacts-textarea-block {
         height: 45%;
         display: flex;
         align-items: flex-end;
+        &.mobile {
+            width: 101%;
+            align-items: center;
+        }
     }
     textarea {
         outline: none;
@@ -285,9 +380,15 @@
         line-height: 3;
         font-family: 'HelveticaNeueCyr-Light';
         font-size: 0.9vw;
+        &.mobile {
+            font-size: 2.2vh;
+        }
     }
    .input-submit {
         width: 27.5%;
+       &.mobile {
+           width: 45%;
+       }
     }
     .input-submit input {
         color: #997a5f;
@@ -299,11 +400,19 @@
         flex-direction: column;
         align-items: flex-start;
         justify-content: center;
+        &.mobile {
+            border: none;
+            align-items: center;
+            padding: 3%;
+        }
     }
     .contacts {
         width: 60%;
         display: flex;
         justify-content: space-between;
+        &.mobile {
+            width: 100%;
+        }
     }
     .contacts .a-text {
         margin-left: 0;
@@ -315,16 +424,28 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        &.mobile {
+            height: auto;
+            width: 100%;
+        }
     }
     .info-column {
         width: 100%;
         display: flex;
         justify-content: flex-start;
         align-items: center;
+        &.mobile {
+            flex-direction: column;
+            width: 100%;
+        }
     }
     .info-column .contacts-block-p {
         width: 29%;
         margin-right: 5%;
+        &.mobile {
+            width: 70%;
+            margin: auto;
+        }
     }
     .arrow-element img {
         margin-left: 4px;
@@ -345,14 +466,24 @@
         align-items: center;
         width: 100%;
         height: 30%;
+        &.mobile {
+            height: 100%;
+        }
     }
     .columns-border-bottom {
         height: 10%;
         border-bottom: 1px solid #dacfb1;
+        &.mobile {
+            display: none;
+        }
     }
     .media-block-photo {
         flex-direction: row;
         justify-content: space-between;
+        &.mobile {
+            width: 120%;
+            margin-top: 4vh;
+        }
     }
     .photo-container {
         position: relative;
@@ -377,7 +508,6 @@
         transition: all 1s linear;
     }
     .eye-open img {
-
         width: 60%;
     }
     .photo-container:hover .eye-open {
@@ -387,10 +517,17 @@
     }
     .columns-border-top {
         border-top: 1px solid #dacfb1;
+        &.mobile {
+            margin-top: 5vh;
+        }
     }
     .columns-border-top img {
         width: 15%;
         margin: 4%;
+        &.mobile {
+            width: 35%;
+            margin: 3%;
+        }
     }
     .slide_line-media {
         top: 25%;
@@ -399,15 +536,110 @@
          font-family: 'HelveticaNeueCyr-Light';
          font-size: 1.5vw;
          letter-spacing: 4px;
+        &.mobile {
+            font-size: 2.2vh;
+        }
      }
     .media-block-columns .text-element {
         font-size: 1.5vw;
         letter-spacing: 2px;
+        &.mobile {
+            font-size: 2.2vh;
+            line-height: 2;
+        }
     }
     .aifs {
         align-items: flex-start;
+        &.mobile {
+            align-items: center;
+        }
     }
     .jcfe {
         justify-content: flex-end;
     }
+    .d-dn {
+        display: none;
+        &.mobile {
+            display: block;
+        }
+    }
+    .m-dn {
+        &.mobile {
+            display: none;
+        }
+    }
+    .see-album-line {
+        display: none;
+        &.mobile {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 110px;
+            width: 5px;
+            margin-top: 8.5vh;
+            position: relative;
+        }
+
+    }
+    .album-line {
+        display: none;
+        &.mobile {
+            display: flex;
+            width: 1px;
+            height: 100px;
+            background-color: #333333;
+        }
+    }
+    .see-album-circle {
+        display: none;
+        &.mobile {
+            display: flex;
+            width: 5px;
+            height: 5px;
+            border: 1px solid #333333;
+            background-color: transparent;
+            border-radius: 100%;
+        }
+    }
+    .horizontal-divider {
+        display: none;
+        &.mobile {
+            display: block;
+            width: 320px;
+            position: absolute;
+            height: 1px;
+            background-color: #dacfb1;
+        }
+    }
+    #card {
+        &.mobile {
+            width: 90%;
+            border: 1px solid #dacfb1;
+            margin: 7vh auto 7vh auto;
+            padding: 5%;
+        }
+    }
+    #card .arrow-element {
+        &.mobile {
+            display: none;
+        }
+    }
+    .submit-mobile {
+        &.mobile{
+            justify-content: flex-end;
+            margin-right: -2%;
+        }
+    }
+    .media-block-line {
+        display: none;
+        &.mobile {
+            display: flex;
+            height: 1px;
+            width: 30px;
+            background-color: #333333;
+            margin: 2vh;
+        }
+    }
+
 </style>

@@ -1,9 +1,9 @@
 <template>
     <div class="header" :class="$mq">
-        <div  class="text-element" :class="$mq">
+        <div  class="text-element text-element-back" :class="$mq">
             BACK
         </div>
-        <router-link to="/" class="logo-wrap">
+        <router-link to="/" class="logo-wrap" :class="$mq">
             <img class="logo" src="src/assets/img/logo.png" alt="Букетное бюро">
         </router-link>
             <div class="menu-icon">
@@ -58,70 +58,21 @@
         left: 5%;
         &.mobile {
             height: 5vh;
+            top: 1vh;
+            flex-direction: row-reverse;
          }
     }
     .menu-icon {
         z-index: 10;
     }
-    .main-item {
-        cursor: pointer;
-        z-index: 20;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-self: flex-end;
-        &.laptop, &.tablet {
-            width: 40px;
-            height: 19px;
-        }
-        &.mobile {
-            width: 30px;
-            height: 17px;
-        }
-    }
-
-    .line {
-        height: 4px;
-        width: 45px;
-        background: white;
-        &.laptop, &.tablet {
-            width: 40px;
-            height: 3px;
-        }
-        &.mobile {
-            width: 30px;
-            height: 3px;
-        }
-    }
-    .line1-rotate {
-        -webkit-transform: rotate(45deg);
-        -moz-transform: rotate(45deg);
-        -ms-transform: rotate(45deg);
-        -o-transform: rotate(45deg);
-        transform: rotate(45deg);
-        position: absolute;
-    }
-    .line2-rotate {
-        -webkit-transform: rotate(-45deg);
-        -moz-transform: rotate(-45deg);
-        -ms-transform: rotate(-45deg);
-        -o-transform: rotate(-45deg);
-        transform: rotate(-45deg);
-        position: absolute;
-    }
     .main-item-close {
         justify-content: center;
         align-items: center;
     }
-    a.logo {
-        font-family: $font-h1;
-        font-size: 4vh;
-        color: white;
-        &.laptop, &.tablet {
-            font-size: 3.5vh;
-        }
+    .text-element-back {
+        cursor: pointer;
         &.mobile {
-            font-size: 3vh;
+            font-size: 1.8vh;
         }
     }
 </style>
