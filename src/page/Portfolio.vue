@@ -2,7 +2,6 @@
     <div class="page portfolio_page">
         <headerWidthBack></headerWidthBack>
         <slidesPortfolio></slidesPortfolio>
-        <info></info>
     </div>
 </template>
 <script>
@@ -21,5 +20,4 @@
         overflow: hidden;
         height: auto;
     }
-
 </style>

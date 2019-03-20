@@ -49,8 +49,10 @@
     @import "../assets/scss/variables";
     .info_page {
         background-color: #fcfcfc;
-        height: auto;
-        position: relative;
+        z-index: 10;
+        height: 100vh;
+        position: fixed;
+        top: 0;
     }
     .info-block {
         position: relative;

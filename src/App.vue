@@ -13,16 +13,19 @@
         },
         methods: {
             onWheel(event) {
-                var delta = event.deltaY
-                var routes = this.$router.options.routes
-                var idx = routes.findIndex(item => item.path === this.$route.path)
-                if (delta > 0 && idx < routes.length - 1) {
-                    this.$router.push(routes[idx + 1])
-                }
-                if (delta < 0 && idx > 0) {
-                    this.$router.push(routes[idx - 1])
-                }
+                var delta = event.deltaY;
+                var routes = this.$router.options.routes;
+                var idx = routes.findIndex(item => item.path === this.$route.path);
 
+
+                if (routes[idx].path != '/portfolio') {
+                    if (delta > 0 && idx < routes.length - 1) {
+                        this.$router.push(routes[idx + 1])
+                    }
+                    if (delta < 0 && idx > 0) {
+                        this.$router.push(routes[idx - 1])
+                    }
+                }
             }
         },
     }
