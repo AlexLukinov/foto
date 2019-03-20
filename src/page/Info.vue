@@ -1,7 +1,10 @@
 <template>
     <div class="page info_page">
         <headerWidthBack></headerWidthBack>
-        <div class="info-block">
+
+        <div v-if="isPortfolio" class="info-block">sadfasdf</div>
+
+        <div v-if="isFlowers" class="info-block">
             <div class="info-content-left">
                 <h2 class="info-h2">Букеты & композиции.</h2>
                 <div class="info-text-block">
@@ -28,6 +31,7 @@
                 </div>
             </div>
         </div>
+
         <div class="scroll-element">
             <div class="arrow-around arrow-rotate" @click="toggleIsActive('developers')">
                 <img class="around" src="src/assets/img/around.png" alt="Буектное бюро">
@@ -40,8 +44,49 @@
     export default {
         data() {
             return {
+                isPortfolio: false,
+                isFlowers: false,
+                isWeddings: false,
+                isEvents: false,
+                isCorporate: false,
+                isFuneral: false,
+                isWorkshops: false
             };
         },
+        methods: {
+            makeAllFalse: function () {
+                this.isPortfolio = false;
+                this.isFlowers = false;
+                this.isWeddings = false;
+                this.isEvents = false;
+                this.isCorporate = false;
+                this.isFuneral = false;
+                this.isWorkshops = false;
+            }
+        },
+        mounted() {
+            EventBus.$on('SLIDE_CHANGED', slideNumber => {
+                this.makeAllFalse();
+
+                switch (slideNumber) {
+                    case 0: this.isPortfolio = true;
+                        break;
+                    case 1: this.isFlowers = true;
+                        break;
+                    case 2: this.isWeddings = true;
+                        break;
+                    case 3: this.isEvents = true;
+                        break;
+                    case 4: this.isCorporate = true;
+                        break;
+                    case 5: this.isFuneral = true;
+                        break;
+                    case 6: this.isWorkshops = true;
+                        break;
+                    default: this.isPortfolio = true;
+                }
+            });
+        }
     }
 </script>
 

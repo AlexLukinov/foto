@@ -15,8 +15,12 @@ import router from './routes'
 import VueMq from 'vue-mq'
 import VueGallerySlideshow from 'vue-gallery-slideshow'
 import Info from './page/Info.vue'
+import Album from './page/Album.vue'
+
+window.EventBus = new Vue();
 
 Vue.component('Info', Info);
+Vue.component('album', Album);
 Vue.component('slidesPortfolio', SlidesPortfolio);
 Vue.use(VueRouter);
 Vue.component('VueGallerySlideshow', VueGallerySlideshow);

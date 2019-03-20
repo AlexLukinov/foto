@@ -1,6 +1,6 @@
 <template>
     <div class="header" :class="$mq">
-        <div  class="text-element text-element-back" :class="$mq">
+        <div @click="closeEvent" class="text-element text-element-back" :class="$mq">
             BACK
         </div>
         <router-link to="/" class="logo-wrap" :class="$mq">
@@ -29,6 +29,9 @@
             onCloseClicked: function () {
                 this.showTopMenu = false;
                 this.$router.go(-1);
+            },
+            closeEvent: function () {
+                EventBus.$emit('close');
             }
         },
         watch:{

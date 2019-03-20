@@ -46,14 +46,15 @@
                          @mouseleave="mouseLeavePhoto(index)"
                          :src="photo.src"
                          :ref="index"
-                         @click="onClick(index)">
+                         @click="onAlbumClick(photo.name)">
                     <div class="catalog-name">{{photo.catalog}}</div>
                     <div class="photo-name">{{photo.name}}</div>
                 </div>
                 <!--<vue-gallery-slideshow :images="data.images" :index="data.index" @close="data.index = null"></vue-gallery-slideshow>-->
             </div>
         </div>
-        <info v-show="showInfo" @close="showInfo = false"></info>
+        <info v-show="showInfo"></info>
+        <album v-show="showAlbum"></album>
     </div>
 </template>
 <script>
@@ -72,13 +73,15 @@
                                     src: 'src/assets/img/portfolio-gallery/1.jpg',
                                     hoverSrc: 'src/assets/img/portfolio-gallery/h1.jpg',
                                     catalog: 'СВАДЕБНАЯ ФЛОРИСТИКА И ДЕКОР',
-                                    name: 'Иван & Даша. Балаклавский Эдем'
+                                    name: 'Иван & Даша. Балаклавский Эдем',
+                                    id: 'idbe'
                                 },
                                 {
                                     src: 'src/assets/img/portfolio-gallery/2.jpg',
                                     hoverSrc: 'src/assets/img/portfolio-gallery/h2.jpg',
                                     catalog: 'СВАДЕБНАЯ ФЛОРИСТИКА И ДЕКОР',
-                                    name: 'Дмитрий & Виктория. Коктебель'
+                                    name: 'Дмитрий & Виктория. Коктебель',
+                                    id: 'dimaVika'
                                 },
                                 {
                                     src: 'src/assets/img/portfolio-gallery/3.jpg',
@@ -808,6 +811,7 @@
                 } else {
                     this.currentNumber = 0
                 }
+                EventBus.$emit('SLIDE_CHANGED', this.currentNumber);
             },
             prev: function () {
                 if (this.currentNumber > 0) {
@@ -815,13 +819,30 @@
                 } else {
                     this.currentNumber = this.data.portfolioSlides.length - 1
                 }
+                EventBus.$emit('SLIDE_CHANGED', this.currentNumber);
+            },
+            onAlbumClick: function (album) {
+                EventBus.$emit('ALBUM_CLICKED', album);
             }
         },
         computed: {
             strokeWidth: function () {
                 let oneStep = 600 / this.data.slides.length;
                 return oneStep * (this.currentNumber + 1)
+            },
+            infoType: function () {
+                switch (this.currentNumber) {
+                    case 0: return 'portfolio';
+                        break;
+                    case 1: return 'flowers';
+                        break;
+                }
             }
+        },
+        mounted() {
+            EventBus.$on('close', () => {
+                this.showInfo = false;
+            })
         }
     }
 
