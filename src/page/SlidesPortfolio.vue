@@ -4,13 +4,17 @@
             <h3>{{ data.portfolioSlides[currentNumber].header.caption }}</h3>
             <div class="image-slides" :class="$mq">
                 <transition class="slider-body" name="myanim" mode="out-in">
-                    <img :src="data.portfolioSlides[currentNumber].header.photo">
+                    <img :src="data.portfolioSlides[currentNumber].header.photo" :key="'headPhoto' + currentNumber">
                 </transition>
             </div>
             <div class="slide-container" :class="$mq">
-                <transition name="text-anim" mode="out-in">
-                    <span class="slides_text" :class="$mq">{{ data.portfolioSlides[currentNumber].header.backgroundText }}</span>
-                </transition>
+                <swiper :options="swiperOption">
+                    <transition name="text-anim" mode="out-in">
+                        <swiper-slide>
+                            <span class="slides_text" :class="$mq" :key="'headText' + currentNumber">{{ data.portfolioSlides[currentNumber].header.backgroundText }}</span>
+                        </swiper-slide>
+                    </transition>
+                </swiper>
             </div>
             <div class="arrow-box" :class="$mq">
                 <div class="arrow-around arrow-rotate" @click="prev">
@@ -66,6 +70,15 @@
     export default {
         data() {
             return {
+                swiperOption: {
+                    slidesPerView: 'auto',
+                    centeredSlides: true,
+                    spaceBetween: 30,
+                    pagination: {
+                        el: '.swiper-pagination',
+                        clickable: true
+                    }
+                },
                 data: {
                     portfolioSlides: [
                         {
