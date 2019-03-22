@@ -8,7 +8,7 @@
                 <transition name="myanim"
                             mode="out-in">
                     <div class="image-slides" :class="$mq">
-                        <div class="text-element author-foto" :class="$mq">Ph: Slava Vladzimirskaya</div>
+                        <div class="text-element author-photo" :class="$mq">Ph: Slava Vladzimirskaya</div>
                         <img src="src/assets/img/aboutUs1.jpg" :class="$mq">
                     </div>
                 </transition>
@@ -421,7 +421,7 @@
            margin-top: 2vh;
        }
    }
-    .author-foto {
+    .author-photo {
         font-size: 0.8vw;
         text-align: left;
         color: #dfcfc0;

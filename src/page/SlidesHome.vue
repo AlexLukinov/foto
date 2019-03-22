@@ -11,7 +11,9 @@
             <div class="slides-body" :class="$mq"
                  v-for="number in [currentNumber]" v-bind:key="number">
                 <div class="name-page" :class="$mq">Home</div>
+
                 <h2 class="slides_text" :class="$mq">{{data.slides_text[currentNumber-1]}}</h2>
+
                 <h3 class="slides_text_description" :class="$mq">Добро пожаловать в студию флористики
                     и декора БУКЕТНОЕ БЮРО
                 </h3>
@@ -24,6 +26,7 @@
                 </router-link>
             </div>
         </transition>
+
         <div class="slide_line" :class="$mq">
             <span class="slide_line_span" @click="prev">0{{currentNumber}}</span>
             <div class="line-beige" ref="filledLine">
@@ -89,9 +92,9 @@
         mounted: function () {
             this.height = this.$refs['filledLine'].clientHeight;
 
-            // setInterval(() => {
-            //     this.next();
-            // }, 3000)
+            setInterval(() => {
+                this.next();
+            }, 3000)
         }
     }
 
@@ -242,22 +245,22 @@
     }
     @keyframes myanim {
         0% {
-            -webkit-clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
-            clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+            -webkit-clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+            clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
         }
         100% {
-            -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            -webkit-clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
+            clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
         }
     }
     @keyframes myanimout {
         0% {
-            -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+            -webkit-clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
+            clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
         }
         100% {
-            -webkit-clip-path: polygon(0 0, 7% 0, 8% 100%, 0% 100%);
-            clip-path: polygon(0 0, 7% 0, 8% 100%, 0% 100%);
+            -webkit-clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+            clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
         }
     }
     .roll-enter-active {

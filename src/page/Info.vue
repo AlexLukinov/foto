@@ -1,9 +1,7 @@
 <template>
     <div class="page info_page">
         <headerWidthBack></headerWidthBack>
-
         <div v-if="isPortfolio" class="info-block">sadfasdf</div>
-
         <div v-if="isFlowers" class="info-block">
             <div class="info-content-left">
                 <h2 class="info-h2">Букеты & композиции.</h2>
@@ -31,7 +29,119 @@
                 </div>
             </div>
         </div>
-
+        <div v-if="isWeddings" class="info-block">
+            <div class="info-content-left">
+                <h2 class="info-h2">Свадебная
+                    флористика & декор</h2>
+                <div class="info-text-block">
+                    <h3>СВАДЕБНЫЙ БУКЕТ</h3>
+                    <div class="info-ul info-ul-margin-bottom">
+                        Хотите красивый букет, который идеально подойдет к Вашему свадебному образу?
+                    </div>
+                    <div class="info-ul">
+                        Будем рады собрать для Вас любой: от классического до авангардного,
+                        от небольшого до внушительных размеров, от моно
+                        до букета со сложным экзотическим составом.
+                    </div>
+                </div>
+            </div>
+            <div class="info-content-right">
+                <div class="info-text-block">
+                    <h3>ОФОРМЛЕНИЕ СВАДЬБЫ</h3>
+                </div>
+                <div class="info-ul info-ul-margin-bottom">
+                    Оформим элегантно и стильно, со вкусом и в деталях Вашу свадьбу.
+                </div>
+                <div class="info-ul info-ul-margin-bottom">
+                    Будь то небольшое торжество в семейном кругу или грандиозный праздник на 500 гостей, наша команда пройдет с Вами все этапы подготовки: от первой палитры вдохновения до финальной  реализации на площадке.
+                </div>
+                <div class="info-ul info-ul-margin-bottom">
+                    Каждый запрос будет рассмотрен с одинаково творческим подходом, вниманием к деталям и воплощением в жизнь.
+                </div>
+                <div class="info-ul">
+                    Возможно дистанционное согласование.
+                </div>
+            </div>
+        </div>
+        <div v-if="isEvents" class="info-block">
+            <div class="info-content-left">
+                <h2 class="info-h2">Оформление мероприятий</h2>
+            </div>
+            <div class="info-content-right">
+                <div class="info-ul info-ul-margin-bottom">
+                    Оформим «под ключ» мероприятие любого масштаба семейного и корпоративного формата:
+                    - крестины<br>
+                    - юбилей<br>
+                    - частное мероприятие<br>
+                    - презентацию<br>
+                    - выставку<br>
+                    - конференцию<br>
+                    - торжественный прием.
+                </div>
+                <div class="info-ul">
+                    Индивидуальный дизайн, заключение договора,
+                    предоставление всех закрывающих документов, оперативное взаимодействие.
+                </div>
+            </div>
+        </div>
+        <div v-if="isCorporate" class="info-block">
+            <div class="info-content-left">
+                <h2 class="info-h2">Отели & корпоративные клиенты</h2>
+            </div>
+            <div class="info-content-right">
+                <div class="info-ul info-ul-margin-bottom">
+                    Сделаем флористику, отражающую Ваш стиль.
+                    Украсим холл, ресепшен, ресторан отеля.
+                    Оформим офисное пространство и переговорную  зону.
+                </div>
+                <div class="info-ul info-ul-margin-bottom">
+                По звонку соберем и оперативно доставим качественный букет  для Ваших гостей, постояльцев, сотрудников, коллег, партнеров.
+                </div>
+                <div class="info-ul">
+                    Заключаем договор на корпоративное обслуживание.
+                </div>
+            </div>
+        </div>
+        <div v-if="isFuneral" class="info-block">
+            <div class="info-content-left">
+                <h2 class="info-h2">Ритуальная флористика</h2>
+            </div>
+            <div class="info-content-right">
+                <div class="info-ul info-ul-margin-bottom">
+                    Выразить свои соболезнования и почтить память ушедших людей цветами – это установленная временем серьезная традиция.
+                </div>
+                <div class="info-ul info-ul-margin-bottom">
+                    Мы ценим желание клиентов украсить прощание с близкими и дорогими им людьми.
+                </div>
+                <div class="info-ul info-ul-margin-bottom">
+                    В этот печальный момент мы максимально упростим для Вас выбор, заказ и доставку цветов (венка, букета, композиции, корзины с цветами).
+                </div>
+                <div class="info-ul">
+                    Если Вы находитесь за пределами Крыма, мы позаботимся о доставке цветов от Вашего имени.
+                </div>
+            </div>
+        </div>
+        <div v-if="isWorkshops" class="info-block">
+            <div class="info-content-left">
+                <h2 class="info-h2">Мастер-классы</h2>
+            </div>
+            <div class="info-content-right">
+                <div class="info-ul info-ul-margin-bottom">
+                    От веночка из живых цветов до собранного своими руками букета, от свадебного украшения  до настольной композиции – мы предлагаем мастер-классы на любой вкус.
+                    Более того, мы разработаем программу мастер-класса специально для Вас!
+                </div>
+                <div class="info-ul info-ul-margin-bottom">
+                    Для детей и друзей, индивидуальные и корпоративные –
+                    наши комфортные и вдохновляющие цветочные мастер-классы для Вас.
+                </div>
+                <div class="info-ul info-ul-margin-bottom">
+                    Занятия проходят у нас в студии в центре Севастополя либо возможен выезд на Вашу площадку.
+                </div>
+                <div class="info-ul">
+                    Запросы присылайте на нашу почту buketnoe_buro@mail.ru
+                </div>
+            </div>
+        </div>
         <div class="scroll-element">
             <div class="arrow-around arrow-rotate" @click="toggleIsActive('developers')">
                 <img class="around" src="src/assets/img/around.png" alt="Буектное бюро">
@@ -109,7 +219,7 @@
     }
     .info-content-right, .info-content-left {
         width: 50%;
-        height: 70%;
+        height: 80%;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -128,13 +238,14 @@
         width: 100%;
     }
     .info-h2 {
-        font-size: 3.2vw;
+        font-size: 3vw;
         font-weight: normal;
         color: #333333;
         letter-spacing: 1px;
         margin: 0;
+        width: 70%;
     }
-    .info-content-left h3 {
+    .info-text-block h3 {
         font-family: 'HelveticaNeueCyr-Light';
         color: #997a5f;
         letter-spacing: 2px;
@@ -145,7 +256,7 @@
         font-family: 'HelveticaNeueCyr-Light';
         color: #333333;
         letter-spacing: 1px;
-        font-size: 1.1vw;
+        font-size: 1.08vw;
         width: 85%;
     }
     .scroll-element {
@@ -158,5 +269,8 @@
         right: 0;
         bottom: 7vh;
         height: max-content;
+    }
+    .info-ul-margin-bottom {
+        margin-bottom: 2.5vh;
     }
 </style>

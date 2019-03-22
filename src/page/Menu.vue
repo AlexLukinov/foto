@@ -22,8 +22,7 @@
                                          @click="toggleIsActive('services')">наши услуги
                                        <span class="nav-item-span">
                                          <span @click="toggleIsActive('services')"
-                                               class="vertical-line"
-                                               :style="lineServicesHeight">
+                                               class="vertical-line" :style="lineServicesHeight">
                                          </span>
                                          <span  class="horizontal-line"></span>
                                        </span>

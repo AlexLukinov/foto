@@ -1,7 +1,7 @@
 <template>
     <div class="slides-portfolio">
         <div class="page-slides">
-            <h3>Весь каталог наших работ</h3>
+            <h3>{{ data.portfolioSlides[currentNumber].header.caption }}</h3>
             <div class="image-slides" :class="$mq">
                 <transition class="slider-body" name="myanim" mode="out-in">
                     <img :src="data.portfolioSlides[currentNumber].header.photo">
@@ -23,7 +23,9 @@
                 </div>
             </div>
             <div class="portfolio-footer">
-                <div class="text-element"><span class="pagination-slide">01</span>/07</div>
+                <div class="text-element">
+                    <span class="pagination-slide">0{{currentNumber+1}}</span>/07
+                </div>
                 <div class="info text-element"
                      id="show-info"
                      @click="showInfo = true"
@@ -41,17 +43,20 @@
             </div>
             <h3 class="portfolio-h3 h3-border-bottom">ВЕСЬ КАТАЛОГ НАШИХ РАБОТ</h3>
             <div class="gallery" id="gallery-portfolio">
-                <div class="image" v-for="(photo, index) in data.portfolioSlides[currentNumber].photos">
+                <div @click="onAlbumClick(photo.id)" class="image" v-for="(photo, index) in data.portfolioSlides[currentNumber].photos">
                     <img @mouseover="mouseOnPhoto(index)"
                          @mouseleave="mouseLeavePhoto(index)"
                          :src="photo.src"
                          :ref="index"
-                         @click="onAlbumClick(photo.name)">
+                         class="fadeImg">
                     <div class="catalog-name">{{photo.catalog}}</div>
                     <div class="photo-name">{{photo.name}}</div>
                 </div>
                 <!--<vue-gallery-slideshow :images="data.images" :index="data.index" @close="data.index = null"></vue-gallery-slideshow>-->
             </div>
+        </div>
+        <div class="text-element current-photo">
+            <span class="pagination-slide">53</span>/53
         </div>
         <info v-show="showInfo"></info>
         <album v-show="showAlbum"></album>
@@ -65,6 +70,7 @@
                     portfolioSlides: [
                         {
                             header: {
+                                caption: 'Весь каталог наших работ',
                                 photo: 'src/assets/img/portfolio-slider1.jpg',
                                 backgroundText: 'Portfolio'
                             },
@@ -74,68 +80,77 @@
                                     hoverSrc: 'src/assets/img/portfolio-gallery/h1.jpg',
                                     catalog: 'СВАДЕБНАЯ ФЛОРИСТИКА И ДЕКОР',
                                     name: 'Иван & Даша. Балаклавский Эдем',
-                                    id: 'idbe'
+                                    id: 'IvanDashaBalaklava'
                                 },
                                 {
                                     src: 'src/assets/img/portfolio-gallery/2.jpg',
                                     hoverSrc: 'src/assets/img/portfolio-gallery/h2.jpg',
                                     catalog: 'СВАДЕБНАЯ ФЛОРИСТИКА И ДЕКОР',
                                     name: 'Дмитрий & Виктория. Коктебель',
-                                    id: 'dimaVika'
+                                    id: 'DimaVikaKoktebel'
                                 },
                                 {
                                     src: 'src/assets/img/portfolio-gallery/3.jpg',
                                     hoverSrc: 'src/assets/img/portfolio-gallery/h3.jpg',
                                     catalog: 'СВАДЕБНАЯ ФЛОРИСТИКА И ДЕКОР',
-                                    name: 'Дмитрий & Виктория. Осеннее вдохновение'
+                                    name: 'Дмитрий & Виктория. Осеннее вдохновение',
+                                    id: 'DimaVikaOsen'
                                 },
                                 {
                                     src: 'src/assets/img/portfolio-gallery/4.jpg',
                                     hoverSrc: 'src/assets/img/portfolio-gallery/h4.jpg',
                                     catalog: 'БУКЕТЫ И КОМПОЗИЦИИ',
-                                    name: 'Съемка для каталога свадебного салона  Marylin. Отель Превысоковъ'
+                                    name: 'Съемка для каталога свадебного салона  Marylin. Отель Превысоковъ',
+                                    id: 'Previsokov'
                                 },
                                 {
                                     src: 'src/assets/img/portfolio-gallery/5.jpg',
                                     hoverSrc: 'src/assets/img/portfolio-gallery/h5.jpg',
                                     catalog: 'БУКЕТЫ И КОМПОЗИЦИИ',
-                                    name: 'Ольга. Оттенки багряного'
+                                    name: 'Ольга. Оттенки багряного',
+                                    id: 'OlgaOttenkiBagryanogo'
                                 },
                                 {
                                     src: 'src/assets/img/portfolio-gallery/6.jpg',
                                     hoverSrc: 'src/assets/img/portfolio-gallery/h6.jpg',
                                     catalog: 'БУКЕТЫ И КОМПОЗИЦИИ',
-                                    name:  'Анастасия. Silk & gold'
+                                    name:  'Анастасия. Silk & gold',
+                                    id: 'AnastasiyaSilkAndGold'
                                 },
                                 {
                                     src: 'src/assets/img/portfolio-gallery/7.jpg',
                                     hoverSrc: 'src/assets/img/portfolio-gallery/h7.jpg',
                                     catalog: 'СВАДЕБНАЯ ФЛОРИСТИКА И ДЕКОР',
-                                    name: 'Валерий & Надежда. Новый Свет'
+                                    name: 'Валерий & Надежда. Новый Свет',
+                                    id: 'ValeraNadiaNoviiSvet'
                                 },
                                 {
                                     src: 'src/assets/img/portfolio-gallery/8.jpg',
                                     hoverSrc: 'src/assets/img/portfolio-gallery/h8.jpg',
                                     catalog: 'СВАДЕБНАЯ ФЛОРИСТИКА И ДЕКОР',
-                                    name: 'Александр & Валерия. Алые паруса'
+                                    name: 'Александр & Валерия. Алые паруса',
+                                    id: 'SashaValeraParusa'
                                 },
                                 {
                                     src: 'src/assets/img/portfolio-gallery/9.jpg',
                                     hoverSrc: 'src/assets/img/portfolio-gallery/h9.jpg',
                                     catalog: 'СВАДЕБНАЯ ФЛОРИСТИКА И ДЕКОР',
-                                    name: 'Дмитрий & Александра. Английский сад'
+                                    name: 'Дмитрий & Александра. Английский сад',
+                                    id: 'DimaSashaEnglandSad'
                                 },
                                 {
                                     src: 'src/assets/img/portfolio-gallery/10.jpg',
                                     hoverSrc: 'src/assets/img/portfolio-gallery/h10.jpg',
                                     catalog: 'БУКЕТЫ И КОМПОЗИЦИИ',
-                                    name:  'Композиции. Подборка'
+                                    name:  'Композиции. Подборка',
+                                    id: 'CompoziciiPodborka'
                                 },
                                 {
                                     src: 'src/assets/img/portfolio-gallery/11.jpg',
                                     hoverSrc: 'src/assets/img/portfolio-gallery/h11.jpg',
                                     catalog: 'БУКЕТЫ И КОМПОЗИЦИИ',
-                                    name:  'Лебединая песнь'
+                                    name:  'Лебединая песнь',
+                                    id: 'LebedinayaPesnya'
                                 },
                                 {
                                     src: 'src/assets/img/portfolio-gallery/12.jpg',
@@ -398,6 +413,7 @@
                         },
                         {
                             header: {
+                                caption: 'Букеты и композиции',
                                 photo: 'src/assets/img/portfolio-slider2.jpg',
                                 backgroundText: 'Flowers'
                             },
@@ -489,6 +505,7 @@
                         },
                         {
                             header: {
+                                caption: 'Свадебная флористика и декор',
                                 photo: 'src/assets/img/portfolio-slider3.jpg',
                                 backgroundText: 'Weddings'
                             },
@@ -664,6 +681,7 @@
                         },
                         {
                             header: {
+                                caption: 'Оформление мероприятий',
                                 photo: 'src/assets/img/portfolio-slider4.jpg',
                                 backgroundText: 'Events'
                             },
@@ -706,6 +724,7 @@
                         },
                         {
                             header: {
+                                caption: 'Отели и корпоративные клиенты',
                                 photo: 'src/assets/img/portfolio-slider5.jpg',
                                 backgroundText: 'Corporate'
                             },
@@ -755,6 +774,7 @@
                         },
                         {
                             header: {
+                                caption: 'Ритуальная флористика',
                                 photo: 'src/assets/img/portfolio-slider6.jpg',
                                 backgroundText: 'Funeral'
                             },
@@ -774,6 +794,7 @@
                         },
                         {
                             header: {
+                                caption: 'Мастер-классы',
                                 photo: 'src/assets/img/portfolio-slider6.jpg',
                                 backgroundText: 'Workshops'
                             },
@@ -796,6 +817,7 @@
                 currentNumber: 0,
                 timer: null,
                 showInfo: false,
+                showAlbum: false,
             }
         },
         methods: {
@@ -823,6 +845,7 @@
             },
             onAlbumClick: function (album) {
                 EventBus.$emit('ALBUM_CLICKED', album);
+                this.showAlbum = true;
             }
         },
         computed: {
@@ -871,7 +894,7 @@
     }
     span.slides_text {
         font-family: 'MinionVariableConcept';
-        font-size: 18.5vw;
+        font-size: 16.5vw;
         color: #dacfb1;
     }
     .image-slides {
@@ -897,14 +920,6 @@
         content: '';
         transform: translateX(-50%);
     }
-
-    /*.btn-slide {*/
-        /*border: 1px solid white;*/
-        /*z-index: 1;*/
-        /*top: 0;*/
-        /*width: 50px;*/
-        /*height: 50px;*/
-    /*}*/
     .arrow-box {
         position: absolute;
         top: 43%;
@@ -1012,7 +1027,7 @@
         background-color: transparent;
         border-radius: 100%;
     }
-    .pagination-slide {
+    .pagination-slide, .current-photo .pagination-slide {
         color: #997a5f;
     }
     .image {
@@ -1024,14 +1039,27 @@
         cursor: pointer;
         width: 32%;
         height: auto;
+
     }
     .image img {
         width: 100%;
         margin: 1%;
-        transition: opacity 1.5s ease ;
+
     }
-    .image img:hover {
-        transition: opacity 1.5s ease ;
+    .image:hover .fadeImg {
+        animation: fadeImg 1s ease;
+    }
+    @keyframes fadeImg {
+        0% {
+            opacity: 1;
+        }
+        5% {
+            opacity: 0.3;
+        }
+
+        100% {
+            opacity: 1;
+        }
     }
     .gallery {
         display: flex;
@@ -1068,5 +1096,9 @@
     }
     .h3-border-bottom {
         border-bottom: 1px solid #dacfb1;
+    }
+    .current-photo {
+        margin-top: 10vh;
+        margin-bottom: 10vh;
     }
 </style>

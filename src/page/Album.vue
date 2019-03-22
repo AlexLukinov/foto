@@ -1,6 +1,21 @@
 <template>
-    <div class="page info_page">
+    <div class="page album_page">
         <headerWidthBack></headerWidthBack>
+        <div class="album-content">
+            <div class="album_name">
+                {{album.nameAlbum}}
+            </div>
+            <div class="photographer">Ph:
+                <span class="photographer">
+                {{album.photographer}}
+                </span>
+            </div>
+            <div class="album-photo">
+                <div v-for="photo in album.photos" :class="photo.isHorizontal ? 'horizontal-photo' : 'photo-item'">
+                    <img :src="photo.src">
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 <script>
@@ -9,29 +24,133 @@
             return {
                 albums: [
                     {
-                        id: 'idbe',
-                        photographer: 'Иван Жимаев',
-                        catalog: 'Флористика',
+                        id: 'Previsokov',
+                        photographer: 'Slava Vladzimirskaya',
+                        nameAlbum: 'Съемка для каталога свадебного салона  Marylin. Отель Превысоковъ',
                         photos: [
                             {
-                                src: 'asdsadf/sadfsdf/1.jpg'
+                                src: 'src/assets/img/portfolio-gallery/Previsokov/1.jpg',
+                                isHorizontal: false
                             },
                             {
-                                src: 'asdsadf/sadfsdf/2.jpg'
+                                src: 'src/assets/img/portfolio-gallery/Previsokov/2.jpg',
+                                isHorizontal: false
+                            },
+                            {
+                                src: 'src/assets/img/portfolio-gallery/Previsokov/3.jpg',
+                                isHorizontal: false
+                            },
+                            {
+                                src: 'src/assets/img/portfolio-gallery/Previsokov/4.jpg',
+                                isHorizontal: false
+                            },
+                            {
+                                src: 'src/assets/img/portfolio-gallery/Previsokov/5.jpg',
+                                isHorizontal: false
+                            },
+                            {
+                                src: 'src/assets/img/portfolio-gallery/Previsokov/6.jpg',
+                                isHorizontal: false
+                            },
+                            {
+                                src: 'src/assets/img/portfolio-gallery/Previsokov/7.jpg'
+                            },
+                            {
+                                src: 'src/assets/img/portfolio-gallery/Previsokov/8.jpg',
+                                isHorizontal: false
+                            },
+                            {
+                                src: 'src/assets/img/portfolio-gallery/Previsokov/9.jpg',
+                                isHorizontal: false
+                            },
+                            {
+                                src: 'src/assets/img/portfolio-gallery/Previsokov/10.jpg',
+                                isHorizontal: false
+                            },
+                            {
+                                src: 'src/assets/img/portfolio-gallery/Previsokov/11.jpg',
+                                isHorizontal: false
+                            },
+                            {
+                                src: 'src/assets/img/portfolio-gallery/Previsokov/12.jpg',
+                                isHorizontal: false
+                            },
+                            {
+                                src: 'src/assets/img/portfolio-gallery/Previsokov/13.jpg',
+                                isHorizontal: false
+                            },
+                            {
+                                src: 'src/assets/img/portfolio-gallery/Previsokov/14.jpg',
+                                isHorizontal: false
+                            },
+                            {
+                                src: 'src/assets/img/portfolio-gallery/Previsokov/15.jpg',
+                                isHorizontal: true
                             },
                         ]
                     },
                     {
-                        id: 'idbe',
-                        photographer: 'Иван Жимаев',
-                        catalog: 'Флористика',
+                        id: 'CompoziciiPodborka',
+                        photographer: 'Olga Karpova',
+                        nameAlbum: 'Композиции. Подборка',
                         photos: [
                             {
-                                src: 'asdsadf/sadfsdf/1.jpg'
+                                src: 'src/assets/img/portfolio-gallery/CompoziciiPodborka/1.jpg',
+                                isHorizontal: false
                             },
                             {
-                                src: 'asdsadf/sadfsdf/2.jpg'
+                                src: 'src/assets/img/portfolio-gallery/CompoziciiPodborka/2.jpg',
+                                isHorizontal: false
                             },
+                            {
+                                src: 'src/assets/img/portfolio-gallery/CompoziciiPodborka/3.jpg',
+                                isHorizontal: false
+                            },
+                            {
+                                src: 'src/assets/img/portfolio-gallery/CompoziciiPodborka/4.jpg',
+                                isHorizontal: false
+                            },
+                            {
+                                src: 'src/assets/img/portfolio-gallery/CompoziciiPodborka/5.jpg',
+                                isHorizontal: false
+                            },
+                            {
+                                src: 'src/assets/img/portfolio-gallery/CompoziciiPodborka/6.jpg',
+                                isHorizontal: false
+                            },
+                            {
+                                src: 'src/assets/img/portfolio-gallery/CompoziciiPodborka/7.jpg',
+                                isHorizontal: false
+                            },
+                            {
+                                src: 'src/assets/img/portfolio-gallery/CompoziciiPodborka/8.jpg',
+                                isHorizontal: false
+                            },
+                            {
+                                src: 'src/assets/img/portfolio-gallery/CompoziciiPodborka/9.jpg',
+                                isHorizontal: false
+                            },
+                            {
+                                src: 'src/assets/img/portfolio-gallery/CompoziciiPodborka/10.jpg',
+                                isHorizontal: false
+                            },
+                            {
+                                src: 'src/assets/img/portfolio-gallery/CompoziciiPodborka/11.jpg',
+                                isHorizontal: false
+                            },
+                            {
+                                src: 'src/assets/img/portfolio-gallery/CompoziciiPodborka/12.jpg',
+                                isHorizontal: false
+                            },
+                            {
+                                src: 'src/assets/img/portfolio-gallery/CompoziciiPodborka/13.jpg',
+                                isHorizontal: false
+                            },
+                            {
+                                src: 'src/assets/img/portfolio-gallery/CompoziciiPodborka/14.jpg',
+                                isHorizontal: false
+                            },
+
                         ]
                     },
                 ],
@@ -39,10 +158,17 @@
             };
         },
         methods: {
+
         },
         mounted() {
             EventBus.$on('ALBUM_CLICKED', albumId => {
-                this.album = albumId;
+                let albumArray = this.albums.filter(album => {
+                    return album.id === albumId;
+                });
+
+                if (albumArray) {
+                    this.album = albumArray[0];
+                }
             });
         }
     }
@@ -50,71 +176,69 @@
 
 <style lang="scss" scoped>
     @import "../assets/scss/variables";
-    .info_page {
+    .album_page {
         background-color: #fcfcfc;
         z-index: 10;
-        height: 100vh;
-        position: fixed;
+        height: auto;
+        position: absolute;
         top: 0;
     }
-    .info-block {
-        position: relative;
-        width: 80%;
-        height: 80vh;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+    .author-photo {
+        font-size: 0.8vw;
+        text-align: left;
+        color: #dfcfc0;
+        transform: rotate(-90deg);
+        width: 5%;
+        white-space: nowrap;
+        margin-bottom: 1%;
     }
-    .info-content-right, .info-content-left {
-        width: 50%;
-        height: 70%;
+    .album-content {
+        margin-top: 10vh;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: center;
+        align-items: center;
+        width: 77%;
     }
-    .info-content-left {
-        width: 40%;
-        border-right: 1px solid #dacfb1;
+    .album_name {
+        font-family: 'Merriweather-Regular';
+        font-size: 1.1vw;
+        color: #333333;
+        margin: 3vh;
     }
-    .info-content-right {
-        justify-content: flex-end;
-    }
-    .content-block {
+    .album-photo {
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
+        width: 100%;
         align-items: flex-start;
+        flex-wrap: wrap;
+    }
+    .photo-item {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        height: auto;
+        width: 43%;
+        border: 15px solid #fcfcfc;
+        outline: 1px solid #dacfb1;
+
+        margin: 1%;
+    }
+    .horizontal-photo {
+        width: 96%;
+        border: 1px solid #dacfb1;
+        padding: 1.5%;
+        margin: 1%;
+    }
+    .photo-item img, .horizontal-photo img {
         width: 100%;
     }
-    .info-h2 {
-        font-size: 3.2vw;
-        font-weight: normal;
+    .photographer {
         color: #333333;
-        letter-spacing: 1px;
-        margin: 0;
-    }
-    .info-content-left h3 {
-        font-family: 'HelveticaNeueCyr-Light';
-        color: #997a5f;
-        letter-spacing: 2px;
-    }
-    .info-ul{
-        text-align: left;
-        line-height: 2.2;
-        font-family: 'HelveticaNeueCyr-Light';
-        color: #333333;
-        letter-spacing: 1px;
-        font-size: 1.1vw;
-        width: 85%;
-    }
-    .scroll-element {
-        width: 11%;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        transform: rotate(180deg);
-        position: absolute;
-        right: 0;
-        bottom: 7vh;
-        height: max-content;
+        margin-top: 1vh;
+        margin-bottom: 3vh;
+        font-family: "ArnoProCaption";
+        font-size: 1vw;
     }
 </style>

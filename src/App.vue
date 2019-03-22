@@ -33,26 +33,26 @@
 
 <style lang="scss" scoped>
     .router-anim-enter-active {
-        animation: coming 1s;
+        animation: going 2s;
         animation-delay: .5s;
         opacity: 0;
     }
-    .router-anim-leave-active {
-        animation: going 1s;
+    .router-anim-leave-to {
+        animation: coming 2s;
     }
 
     @keyframes going {
-        from {
-            -webkit-clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
-            clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
+        0% {
+            -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
         }
-        to {
-            -webkit-clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
-            clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+        100% {
+            -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
         }
 
     }
-    @keyframes coming {
+    /*@keyframes coming {
         from {
             transform: translateX(-210px);
             opacity: 0;
@@ -61,5 +61,16 @@
             transform: translateX(0);
             opacity: 1;
         }
+    }*/
+    @keyframes coming {
+        0% {
+            -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        }
+        100% {
+            -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        }
     }
+
 </style>
