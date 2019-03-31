@@ -7,7 +7,7 @@
             <div class="menu-icon" :class="$mq">
                 <div class="toggleTopMenu">
                         <div class="main-item menu text-element"
-                             @click="showTopMenu = !showTopMenu" v-if="!showTopMenu" :class="$mq">
+                             @click="showTopMenu = !showTopMenu"  :class="$mq">
                            MENU
                         </div>
                 </div>
@@ -55,13 +55,13 @@
         &.mobile {
             flex-direction: row-reverse;
             width: 100%;
-            height: 4vh;
+            height: 7vh;
             border-bottom: 1px solid #dacfb1;
             top: 1vh;
         }
     }
     .menu-icon {
-        z-index: 10;
+        z-index: 3;
         &.mobile {
             margin-left: 5%;
         }

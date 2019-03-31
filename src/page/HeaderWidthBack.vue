@@ -60,7 +60,7 @@
         top: 3vh;
         left: 5%;
         &.mobile {
-            height: 5vh;
+            height: 7vh;
             top: 1vh;
             flex-direction: row-reverse;
          }

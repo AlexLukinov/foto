@@ -1,6 +1,7 @@
 <template>
     <div class="page portfolio_page">
         <headerWidthBack></headerWidthBack>
+        <div class="horizontal-divider" :class="$mq"></div>
         <slidesPortfolio></slidesPortfolio>
         <div class="media-block-columns columns-border-top" :class="$mq">
             <img src="src/assets/img/previu.png" :class="$mq" alt="Буектное бюро">
@@ -46,6 +47,17 @@
         &.mobile {
             width: 35%;
             margin: 3%;
+        }
+    }
+    .horizontal-divider {
+        display: none;
+        &.mobile {
+            display: block;
+            width: 111%;
+            margin-top: 7vh;
+            margin-bottom: 2vh;
+            height: 1px;
+            background-color: #dacfb1;
         }
     }
 </style>

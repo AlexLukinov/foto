@@ -1,7 +1,7 @@
 <template>
     <div class="slides-portfolio">
-        <div class="page-slides">
-            <h3>{{ data.portfolioSlides[currentNumber].header.caption }}</h3>
+        <div class="page-slides" :class="$mq">
+            <h3 class="portfolio-caption" :class="$mq">{{ data.portfolioSlides[currentNumber].header.caption }}</h3>
             <div class="image-slides" :class="$mq">
                 <transition class="slider-body" name="myanim" mode="out-in">
                     <img :src="data.portfolioSlides[currentNumber].header.photo" :key="'headPhoto' + currentNumber">
@@ -18,51 +18,69 @@
             </div>
             <div class="arrow-box" :class="$mq">
                 <div class="arrow-around arrow-rotate" @click="prev">
-                    <img class="around" src="src/assets/img/around.png" alt="Буектное бюро">
+                    <div class="div-around"></div>
                     <img class="arrow arrow-left" src="src/assets/img/arrow-left.png" alt="Буектное бюро">
                 </div>
                 <div class="arrow-around arrow-rotate" @click="next">
                     <img class="arrow arrow-right" src="src/assets/img/arrow-right.png" alt="Буектное бюро">
-                    <img class="around" src="src/assets/img/around.png" alt="Буектное бюро">
+                    <div class="div-around"></div>
                 </div>
             </div>
-            <div class="portfolio-footer">
-                <div class="text-element">
+            <div class="portfolio-footer" :class="$mq">
+                <div class="text-element" :class="$mq">
                     <span class="pagination-slide">0{{currentNumber+1}}</span>/07
                 </div>
                 <div class="info text-element"
+                     :class="$mq"
                      id="show-info"
                      @click="showInfo = true"
                 >INFO</div>
             </div>
-            <div class="see-album">
-                <button class="text-element">
+            <div class="see-album" :class="$mq">
+                <button class="text-element"
+                        @click="scrollMeTo('porto')"
+                        :class="$mq">
                     СМОТРЕТЬ<br>АЛЬБОМ
                 </button>
-                <div class="see-album-line">
+                <div class="see-album-line" :class="$mq">
                     <div class="see-album-circle"></div>
-                    <div class="album-line"></div>
+                    <div class="album-line" :class="$mq"></div>
                     <div class="see-album-circle"></div>
                 </div>
             </div>
-            <h3 class="portfolio-h3 h3-border-bottom">ВЕСЬ КАТАЛОГ НАШИХ РАБОТ</h3>
+            <h3 class="portfolio-h3 h3-border-bottom"
+                ref="porto"
+                :class="$mq">{{ data.portfolioSlides[currentNumber].header.caption }}</h3>
             <div class="gallery" id="gallery-portfolio">
-                <div @click="onAlbumClick(photo.id)" class="image" v-for="(photo, index) in data.portfolioSlides[currentNumber].photos">
+                <div @click="onAlbumClick(photo.id)" class="image"
+                     :class="$mq"
+                     v-for="(photo, index) in data.portfolioSlides[currentNumber].photos">
                     <img @mouseover="mouseOnPhoto(index)"
                          @mouseleave="mouseLeavePhoto(index)"
                          :src="photo.src"
                          :ref="index"
                          class="fadeImg">
-                    <div class="catalog-name">{{photo.catalog}}</div>
-                    <div class="photo-name">{{photo.name}}</div>
+                    <div class="catalog-name" :class="$mq">{{photo.catalog}}</div>
+                    <div class="photo-name" :class="$mq">{{photo.name}}</div>
                 </div>
                 <!--<vue-gallery-slideshow :images="data.images" :index="data.index" @close="data.index = null"></vue-gallery-slideshow>-->
             </div>
         </div>
-        <div class="text-element current-photo">
-            <span class="pagination-slide">53</span>/53
+        <div class="arrow-box arrow-box-footer" :class="$mq">
+            <div class="arrow-around arrow-rotate" @click="prev">
+                <div class="div-around"></div>
+                <img class="arrow arrow-left" src="src/assets/img/arrow-left.png" alt="Буектное бюро">
+            </div>
+            <div class="text-element current-photo">
+                <span class="pagination-slide">53</span>/53
+            </div>
+            <div class="arrow-around arrow-rotate" @click="next">
+                <img class="arrow arrow-right" src="src/assets/img/arrow-right.png" alt="Буектное бюро">
+                <div class="div-around"></div>
+            </div>
         </div>
-        <info v-show="showInfo"></info>
+
+        <info v-show="showInfo" class="animated fadeIn"></info>
         <album v-show="showAlbum"></album>
     </div>
 </template>
@@ -859,6 +877,12 @@
             onAlbumClick: function (album) {
                 EventBus.$emit('ALBUM_CLICKED', album);
                 this.showAlbum = true;
+            },
+            scrollMeTo(refName) {
+                var element = this.$refs[refName];
+                var top = element.offsetTop;
+
+                window.scrollTo(0, top);
             }
         },
         computed: {
@@ -899,16 +923,29 @@
         height: auto;
         margin-top: 10vh;
         align-items: center;
+        &.mobile {
+            margin-top: 3vh;
+        }
     }
-    .page-slides h3 {
+    .portfolio-caption {
         font-family: HelveticaNeueCyr-Light;
         font-size: 0.9vw;
         color: #333333;
+        letter-spacing: 1px;
+        &.mobile {
+            width: 60%;
+            font-size: 2.5vh;
+            text-align: center;
+        }
     }
     span.slides_text {
         font-family: 'MinionVariableConcept';
-        font-size: 16.5vw;
+        font-size: 14.5vw;
         color: #dacfb1;
+        &.mobile {
+            font-size: 13vh;
+
+        }
     }
     .image-slides {
         width: 30%;
@@ -916,6 +953,11 @@
         overflow: hidden;
         margin-top: 1vh;
         transition: all 0.3s ease;
+        &.mobile {
+            width: 50%;
+            height: 40vh;
+            margin-top: 12vh;
+        }
     }
     .image-slides img {
         width: 100%;
@@ -928,6 +970,9 @@
         justify-content: center;
         width: 80%;
         z-index: -1;
+        &.mobile {
+            top: 44vh;
+        }
     }
     .slide-container::before {
         content: '';
@@ -940,12 +985,15 @@
         display: flex;
         justify-content: space-between;
         width: 90%;
+        &.mobile {
+            top: 72vh;
+        }
     }
     .myanim-enter-active {
-        animation: myanim cubic-bezier(1.0, 0.6, 0.9, 1.0) 1s;
+        animation: myanim cubic-bezier(.8,.8,1,1) 2s;
     }
     .myanim-leave-active {
-        animation: myanimout cubic-bezier(1.0, 0.6, 0.9, 1.0) 1s;
+        animation: myanimout cubic-bezier(.8,.8,1,1) 2s;
     }
     a.slide-a {
         display: flex;
@@ -966,20 +1014,25 @@
         0% {
             -webkit-clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
             clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+            transform: scale(1.2);
         }
         100% {
             -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
             clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            transform: scale(1);
+
         }
     }
     @keyframes myanimout {
         0% {
             -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
             clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            transform: scale(1);
         }
         100% {
             -webkit-clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
             clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+            transform: scale(1.2);
         }
     }
     @keyframes text-anim {
@@ -994,13 +1047,19 @@
     .pageanim-leave-active {
         animation: pageanimout ease 1s;
     }
-
     .portfolio-footer {
         display: flex;
         justify-content: space-between;
         align-items: center;
         width: 100%;
         height: 20vh;
+        &.mobile {
+            flex-direction: column-reverse;
+            width: 20%;
+            height: 50vh;
+            position: absolute;
+            top: 25vh;
+        }
     }
     .see-album {
         position: absolute;
@@ -1011,6 +1070,9 @@
         flex-direction: column;
         width: 20%;
         height: auto;
+        &.mobile {
+            top: 80vh;
+        }
     }
    .see-album button {
         width: 140px;
@@ -1018,6 +1080,12 @@
         border-radius: 100%;
         border: 1px solid #dacfb1;
        font-size: 14px;
+       &.mobile {
+           width: 100px;
+           height: 100px;
+           font-size: 11px;
+           line-height: 1.4;
+       }
     }
     .see-album-line {
         display: flex;
@@ -1027,11 +1095,17 @@
         height: 110px;
         width: 5px;
         margin-top: -20px;
+        &.mobile {
+            margin-top: 5vh;
+        }
     }
     .album-line {
         width: 1px;
         height: 100px;
         background-color: #333333;
+        &.mobile {
+            height: 60px;
+        }
     }
     .see-album-circle {
         width: 5px;
@@ -1052,6 +1126,9 @@
         cursor: pointer;
         width: 32%;
         height: auto;
+        &.mobile {
+            width: 48%;
+        }
 
     }
     .image img {
@@ -1089,6 +1166,13 @@
         letter-spacing: 1px;
         color: #666666;
         line-height: 2.5;
+        &.mobile {
+            line-height: 1.5;
+            width: 90%;
+            margin-bottom: 1vh;
+            margin-top: 1vh;
+            font-size: 1.2vh;
+        }
     }
     .photo-name {
         font-family: 'Merriweather-Regular';
@@ -1098,6 +1182,9 @@
         margin-block-end: 1.5em;
         width: 90%;
         letter-spacing: 1px;
+        &.mobile {
+            font-size: 1.5vh;
+        }
     }
     .portfolio-h3 {
         border-bottom: 1px solid;
@@ -1106,6 +1193,10 @@
         margin-bottom: 10vh;
         width: 80%;
         text-align: center;
+        text-transform: uppercase;
+        &.mobile {
+            margin-top: 45vh;
+        }
     }
     .h3-border-bottom {
         border-bottom: 1px solid #dacfb1;
@@ -1113,5 +1204,9 @@
     .current-photo {
         margin-top: 10vh;
         margin-bottom: 10vh;
+    }
+    .arrow-box-footer {
+        position: static;
+        width: 30%;
     }
 </style>

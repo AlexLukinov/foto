@@ -8,6 +8,7 @@ $text-color: #333333;
 $color-akc: #9e0760;
 $small: 320px;
 $large: 1024px;
+$blog-p: 'CasusLight';
 
 @mixin respond-to($media) {
   @if $media == handhelds {

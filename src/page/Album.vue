@@ -1,17 +1,19 @@
 <template>
     <div class="page album_page">
         <headerWidthBack></headerWidthBack>
-        <div class="album-content">
-            <div class="album_name">
+        <div class="horizontal-divider" :class="$mq"></div>
+        <div class="album-content" :class="$mq">
+            <div class="album_name" :class="$mq">
                 {{album.nameAlbum}}
             </div>
-            <div class="photographer">Ph:
-                <span class="photographer">
+            <div class="photographer" :class="$mq">Ph:
+                <span class="photographer" :class="$mq">
                 {{album.photographer}}
                 </span>
             </div>
-            <div class="album-photo">
-                <div v-for="photo in album.photos" :class="photo.isHorizontal ? 'horizontal-photo' : 'photo-item'">
+            <div class="album-photo" :class="$mq">
+                <div v-for="photo in album.photos"
+                     :class="[photo.isHorizontal ? 'horizontal-photo' : 'photo-item', $mq]">
                     <img :src="photo.src">
                 </div>
             </div>
@@ -191,6 +193,9 @@
         width: 5%;
         white-space: nowrap;
         margin-bottom: 1%;
+        &.mobile {
+            font-size: 2vh;
+        }
     }
     .album-content {
         margin-top: 10vh;
@@ -199,12 +204,20 @@
         justify-content: center;
         align-items: center;
         width: 77%;
+        &.mobile {
+            width: 90%;
+            margin-top: 3vh;
+        }
     }
     .album_name {
         font-family: 'Merriweather-Regular';
         font-size: 1.1vw;
         color: #333333;
         margin: 3vh;
+        &.mobile {
+            font-size: 2.2vh;
+            line-height: 1.5;
+        }
     }
     .album-photo {
         display: flex;
@@ -222,8 +235,12 @@
         width: 43%;
         border: 15px solid #fcfcfc;
         outline: 1px solid #dacfb1;
-
         margin: 1%;
+        &.mobile {
+            width: 100%;
+            border: 10px solid #fcfcfc;
+            margin-bottom: 2vh;
+        }
     }
     .horizontal-photo {
         width: 96%;
@@ -240,5 +257,19 @@
         margin-bottom: 3vh;
         font-family: "ArnoProCaption";
         font-size: 1vw;
+        &.mobile {
+            font-size: 2vh;
+        }
+    }
+    .horizontal-divider {
+        display: none;
+        &.mobile {
+            display: block;
+            width: 111%;
+            margin-top: 8vh;
+            margin-bottom: 0;
+            height: 1px;
+            background-color: #dacfb1;
+        }
     }
 </style>

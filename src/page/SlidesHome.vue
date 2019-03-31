@@ -21,7 +21,7 @@
                     <span class="nav-link-text">Портфолио</span>
                     <div class="arrow-around arrow-rotate">
                         <img class="arrow arrow-right" src="src/assets/img/arrow-right.png" alt="Буектное бюро">
-                        <img class="around" src="src/assets/img/around.png" alt="Буектное бюро">
+                        <div class="div-around"></div>
                     </div>
                 </router-link>
             </div>
@@ -92,9 +92,9 @@
         mounted: function () {
             this.height = this.$refs['filledLine'].clientHeight;
 
-            setInterval(() => {
-                this.next();
-            }, 3000)
+            // setInterval(() => {
+            //     this.next();
+            // }, 3000)
         }
     }
 
@@ -145,6 +145,8 @@
         font-weight: normal;
         width: 72%;
         &.mobile {
+            margin-top: 5vh;
+            margin-bottom: 7.5vh;
             font-size: 6vh;
             margin-left: 0;
         }
@@ -165,8 +167,9 @@
         align-items: center;
         width: 27.8%;
         margin-left: 5%;
+        overflow: hidden;
         &.mobile {
-            width: 80%;
+            width: 77%;
             margin-left: 2%;
         }
     }
@@ -209,7 +212,7 @@
         width: 20px;
         &.mobile {
             top: 30vh;
-            left: 90%;
+            left: 88%;
         }
     }
     .slide-progress {
@@ -272,6 +275,5 @@
     .active {
         background-color: palegreen;
     }
-
 
 </style>

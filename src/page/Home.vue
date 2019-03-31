@@ -17,7 +17,7 @@
         height: 92vh;
         justify-content: flex-end;
         &.mobile {
-            height: 100vh;
+            height: auto;
         }
     }
     .header-width-call {

@@ -1,6 +1,6 @@
 <template>
     <transition name="menu-anim" mode="out-in">
-        <div class="page page-menu">
+        <div class="page page-menu" :class="$mq">
             <headerMenuMobile></headerMenuMobile>
                <div class="menu-list" :class="$mq">
                    <div class="menu-left-column" :class="$mq">
@@ -16,6 +16,7 @@
                                </button>
                            </router-link>
                            <router-link to="/">
+                               <router-link to="/portfolio">
                                <button>
                                    <span class="nav-item"
                                          :class="$mq"
@@ -28,6 +29,7 @@
                                        </span>
                                    </span>
                                </button>
+                               </router-link>
                            </router-link>
                            <transition name="roll" mode="out-in">
                                <div v-if="isActiveServices">
@@ -99,13 +101,12 @@
                                    </router-link>
                                </div>
                            </transition>
-
                            <router-link to="/aboutUs">
                                <button>
                                    <span class="nav-item" :class="$mq">о нас</span>
                                </button>
                            </router-link>
-                           <router-link to="/">
+                           <router-link to="/blog">
                                <button>
                                    <span class="nav-item"
                                          :class="$mq"
@@ -163,11 +164,9 @@
                             alt="Букетное бюро">
                        <div class="arrow-around arrow-rotate"
                             :class="$mq"
+                            ref="menuArrow"
                             @click="toggleIsActive('developers')">
-                           <img class="around"
-                                :class="$mq"
-                                src="src/assets/img/around.png"
-                                alt="Буектное бюро">
+                           <div class="div-around" :class="$mq"></div>
                            <img class="arrow arrow-left"
                                 :class="$mq"
                                 src="src/assets/img/arrow-left.png"
@@ -202,13 +201,12 @@
                                    </span>
                                    </a>
                                </div>
-                               <span class="a-text">2019</span>
+                               <span class="a-text" :class="$mq">2019</span>
 
                            </div>
                        </div>
                    </transition>
                </div>
-
         </div>
     </transition>
 </template>
@@ -234,6 +232,7 @@
                      this.isActiveBlog = !this.isActiveBlog;
                      break;
                  case 'developers':
+                     this.$refs.menuArrow.style.transform = 'rotate(180deg)';
                      this.isActiveDevelopers = !this.isActiveDevelopers;
                      break;
              }
@@ -264,7 +263,11 @@
         align-items: flex-end;
         top: 0;
         left: 0;
-        z-index: 1;
+        z-index: 5;
+        &.mobile {
+            height: 91vh;
+            position: fixed;
+        }
     }
     .menu-list {
         display: flex;
@@ -343,13 +346,13 @@
         }
     }
     .contacts {
-        width: 100%;
+        width: 80%;
         display: flex;
         justify-content: space-between;
         &.mobile {
             position: absolute;
             width: 82%;
-            top: 95vh;
+            top: 85vh;
             left: 8%;
         }
     }
@@ -376,7 +379,6 @@
     .arrow-around {
         margin-left: 15%;
         &.mobile {
-            transform: rotate(180deg);
             margin-left: 10%;
         }
     }
@@ -640,6 +642,16 @@
     .a-text {
         &.mobile {
             font-size: 2.2vh;
+            text-align: left;
         }
     }
+    .div-around {
+        margin-top: 0;
+    }
+    .arrow-rotate {
+    &.mobile {
+        transform: rotate(180deg);
+    }
+    }
+
 </style>

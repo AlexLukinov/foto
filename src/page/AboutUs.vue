@@ -23,7 +23,7 @@
                             <span class="nav-link-text">Портфолио</span>
                             <div class="arrow-around arrow-rotate">
                                 <img class="arrow arrow-right" src="src/assets/img/arrow-right.png" alt="Буектное бюро">
-                                <img class="around" src="src/assets/img/around.png" alt="Буектное бюро">
+                                <div class="div-around"></div>
                             </div>
                         </router-link>
                     </div>
@@ -66,7 +66,7 @@
                         <span class="nav-link-text" :class="$mq">Наши контакты</span>
                         <div class="arrow-around arrow-rotate" :class="$mq">
                             <img class="arrow arrow-right" src="src/assets/img/arrow-right.png" alt="Буектное бюро">
-                            <img class="around" src="src/assets/img/around.png" alt="Буектное бюро">
+                            <div class="div-around"></div>
                         </div>
                     </router-link>
                 </div>
@@ -133,9 +133,7 @@
                             <img class="arrow arrow-right"
                                  :class="$mq"
                                  src="src/assets/img/arrow-right.png" alt="Буектное бюро">
-                            <img class="around"
-                                 :class="$mq"
-                                 src="src/assets/img/around.png" alt="Буектное бюро">
+                            <div class="div-around" :class="$mq"></div>
                         </div>
                     </router-link>
                 </div>
@@ -148,9 +146,7 @@
                             <img class="arrow arrow-right"
                                  :class="$mq"
                                  src="src/assets/img/arrow-right.png" alt="Буектное бюро">
-                            <img class="around"
-                                 :class="$mq"
-                                 src="src/assets/img/around.png" alt="Буектное бюро">
+                            <div class="div-around" :class="$mq"></div>
                         </div>
                     </router-link>
                 </div>
@@ -164,9 +160,7 @@
                             <img class="arrow arrow-right"
                                  :class="$mq"
                                  src="src/assets/img/arrow-right.png" alt="Буектное бюро">
-                            <img class="around"
-                                 :class="$mq"
-                                 src="src/assets/img/around.png" alt="Буектное бюро">
+                            <div class="div-around" :class="$mq"></div>
                         </div>
                     </router-link>
                 </div>
@@ -180,9 +174,7 @@
                             <img class="arrow arrow-right"
                                  :class="$mq"
                                  src="src/assets/img/arrow-right.png" alt="Буектное бюро">
-                            <img class="around"
-                                 :class="$mq"
-                                 src="src/assets/img/around.png" alt="Буектное бюро">
+                            <div class="div-around" :class="$mq"></div>
                         </div>
                     </router-link>
                 </div>
@@ -203,9 +195,7 @@
                             <img class="arrow arrow-right"
                                  :class="$mq"
                                  src="src/assets/img/arrow-right.png" alt="Буектное бюро">
-                            <img class="around"
-                                 :class="$mq"
-                                 src="src/assets/img/around.png" alt="Буектное бюро">
+                            <div class="div-around" :class="$mq"></div>
                         </div>
                     </router-link>
                 </div>
@@ -218,9 +208,7 @@
                             <img class="arrow arrow-right"
                                  :class="$mq"
                                  src="src/assets/img/arrow-right.png" alt="Буектное бюро">
-                            <img class="around"
-                                 :class="$mq"
-                                 src="src/assets/img/around.png" alt="Буектное бюро">
+                            <div class="div-around" :class="$mq"></div>
                         </div>
                     </router-link>
                 </div>
@@ -233,9 +221,7 @@
                             <img class="arrow arrow-right"
                                  :class="$mq"
                                  src="src/assets/img/arrow-right.png" alt="Буектное бюро">
-                            <img class="around"
-                                 :class="$mq"
-                                 src="src/assets/img/around.png" alt="Буектное бюро">
+                            <div class="div-around" :class="$mq"></div>
                         </div>
                     </router-link>
                 </div>
@@ -248,9 +234,7 @@
                             <img class="arrow arrow-right"
                                  :class="$mq"
                                  src="src/assets/img/arrow-right.png" alt="Буектное бюро">
-                            <img class="around"
-                                 :class="$mq"
-                                 src="src/assets/img/around.png" alt="Буектное бюро">
+                            <div class="div-around" :class="$mq"></div>
                         </div>
                     </router-link>
                 </div>
@@ -285,7 +269,7 @@
                         <span class="nav-link-text" :class="$mq">Наши истории</span>
                         <div class="arrow-around arrow-rotate" :class="$mq">
                             <img class="arrow arrow-right" src="src/assets/img/arrow-right.png" alt="Буектное бюро">
-                            <img class="around" src="src/assets/img/around.png" alt="Буектное бюро">
+                            <div class="div-around" :class="$mq"></div>
                         </div>
                     </router-link>
                 </div>
@@ -577,6 +561,7 @@
             padding-top: 2vh;
             padding-bottom: 2vh;
             border-bottom: 1px solid #dacfb1;
+            width: 70%;
         }
     }
     .caption {
@@ -639,7 +624,8 @@
         &.mobile {
             display: block;
             width: 111%;
-            margin-block-end: 1em;
+            margin-top: 2vh;
+            margin-bottom: 2vh;
             height: 1px;
             background-color: #dacfb1;
         }

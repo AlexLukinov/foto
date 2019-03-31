@@ -16,11 +16,13 @@ import VueMq from 'vue-mq'
 import VueGallerySlideshow from 'vue-gallery-slideshow'
 import Info from './page/Info.vue'
 import Album from './page/Album.vue'
+import Post from './page/Post.vue'
 
 window.EventBus = new Vue();
 
 Vue.component('Info', Info);
 Vue.component('album', Album);
+Vue.component('Post', Post)
 Vue.component('slidesPortfolio', SlidesPortfolio);
 Vue.use(VueRouter);
 Vue.component('VueGallerySlideshow', VueGallerySlideshow);
@@ -36,7 +38,7 @@ Vue.component('previu', Previu);
 
 Vue.use(VueMq, {
     breakpoints: {
-        mobile: 450,
+        mobile: 769,
         tablet: 900,
         laptop: 1250,
         desktop: Infinity,

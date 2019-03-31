@@ -30,7 +30,12 @@
                     </div>
                     <div class="contacts-input-block">
                         <div class="modal-input input-submit" :class="$mq">
-                            <input type="submit" placeholder="Отправить">
+                            <button type="submit"
+                                    :class="$mq"
+                                    @click="showModal = true">
+                                Отправить
+                            </button>
+                            <modal-order v-show="showModal" @close="showModal = false"></modal-order>
                         </div>
                     </div>
                 </div>
@@ -89,7 +94,7 @@
                         (воскресенье выходной)</p>
                 </div>
                 <div class="contacts-block-p" :class="$mq">
-                    <p :class="$mq">Мы говорим на RUS, ENG, FR <br> языках</p>
+                    <p class="block-p-margin-left" :class="$mq">Мы говорим на RUS, ENG, FR <br> языках</p>
                 </div>
             </div>
             <div class="info-column" :class="$mq">
@@ -115,7 +120,7 @@
                     </p>
                 </div>
                 <div class="contacts-form" :class="$mq">
-                    <div class="contacts-input-block" :class="$mq">
+                    <div class="contacts-input-block input-margin-top" :class="$mq">
                         <div class="modal-input" :class="$mq">
                             <input type="text" :class="$mq" placeholder="Имя">
                         </div>
@@ -123,7 +128,7 @@
                             <input type="email" :class="$mq" placeholder="Email">
                         </div>
                     </div>
-                    <div class="contacts-input-block">
+                    <div class="contacts-input-block input-margin-top" :class="$mq">
                         <div class="modal-input" :class="$mq">
                             <input type="text" :class="$mq" placeholder="Телефон">
                         </div>
@@ -141,7 +146,12 @@
                     </div>
                     <div class="contacts-input-block submit-mobile" :class="$mq">
                         <div class="modal-input input-submit" :class="$mq">
-                            <input type="submit" :class="$mq" placeholder="Отправить">
+                            <button type="submit"
+                                    :class="$mq"
+                                    @click="showModal = true">
+                                Отправить
+                            </button>
+                            <modal-order v-show="showModal" @close="showModal = false"></modal-order>
                         </div>
                     </div>
                 </div>
@@ -209,6 +219,11 @@
 </template>
 <script>
     export default {
+        data() {
+            return {
+                showModal: false,
+            };
+        },
     }
 </script>
 
@@ -312,7 +327,7 @@
     .contacts-block-p p {
         font-size: 1vw;
         &.mobile {
-            font-size: 2.2vh;
+            font-size: 14px;
             text-align: center;
         }
     }
@@ -323,8 +338,8 @@
         height: 75%;
         margin-right: 5%;
         &.mobile {
-            height: 50vh;
-            min-height: 45vh;
+            height: 320px;
+            /*min-height: 70vh;*/
             margin: auto;
             width: 95%;
         }
@@ -357,7 +372,7 @@
         background-color: transparent;
         color: #333333;
         &.mobile {
-            font-size: 2.2vh;
+            font-size: 16px;
         }
     }
     .contacts-textarea-block {
@@ -367,6 +382,7 @@
         &.mobile {
             width: 101%;
             align-items: center;
+            height: 200px;
         }
     }
     textarea {
@@ -381,7 +397,7 @@
         font-family: 'HelveticaNeueCyr-Light';
         font-size: 0.9vw;
         &.mobile {
-            font-size: 2.2vh;
+            font-size: 16px;
         }
     }
    .input-submit {
@@ -390,7 +406,17 @@
            width: 45%;
        }
     }
-    .input-submit input {
+    .input-submit button {
+        width: 100%;
+        height: 100%;
+        color: #333333;
+        border: 1px solid #dacfb1;
+        font-size: 1vw;
+        &.mobile {
+            font-size: 16px;
+        }
+    }
+    .input-submit:hover button {
         color: #997a5f;
     }
     .contacts-block-border {
@@ -537,14 +563,14 @@
          font-size: 1.5vw;
          letter-spacing: 4px;
         &.mobile {
-            font-size: 2.2vh;
+            font-size: 16px;
         }
      }
     .media-block-columns .text-element {
         font-size: 1.5vw;
         letter-spacing: 2px;
         &.mobile {
-            font-size: 2.2vh;
+            font-size: 16px;
             line-height: 2;
         }
     }
@@ -610,6 +636,8 @@
             position: absolute;
             height: 1px;
             background-color: #dacfb1;
+            margin-top: 2vh;
+            margin-bottom: 2vh;
         }
     }
     #card {
@@ -641,5 +669,17 @@
             margin: 2vh;
         }
     }
+    .input-margin-top {
+        &.mobile {
+            margin-top: 8px;
+        }
+    }
+    .block-p-margin-left {
+        &.mobile {
+            margin-left: 10%;
+        }
+    }
+    button {
 
+    }
 </style>
