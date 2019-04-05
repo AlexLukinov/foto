@@ -160,7 +160,7 @@
                        <img src="src/assets/img/close.png"
                             :class="$mq"
                             class="menu-close"
-                            @click="$emit('close')"
+                            @click="closeClicked"
                             alt="Букетное бюро">
                        <div class="arrow-around arrow-rotate"
                             :class="$mq"
@@ -236,6 +236,9 @@
                      this.isActiveDevelopers = !this.isActiveDevelopers;
                      break;
              }
+         },
+         closeClicked: function () {
+             EventBus.$emit('close');
          }
      },
      computed: {

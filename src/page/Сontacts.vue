@@ -105,12 +105,14 @@
                     <p :class="$mq">Курьерская доставка. Различные формы оплаты.</p>
                 </div>
                 <div class="contacts-block-p" :class="$mq">
-                    <p id="card" :class="$mq">Смотреть БУКЕТНОЕ БЮРО <br>
-                        на карте
-                        <span class="arrow-element" :class="$mq">
+                    <a href="https://yandex.ru/maps/?um=constructor%3A525bdf82a28509ec10121570025294f295b6324275bb5abaf46f1dc765ba8efa&source=constructorLink">
+                        <p id="card" :class="$mq">Смотреть БУКЕТНОЕ БЮРО <br>
+                            на карте
+                            <span class="arrow-element" :class="$mq">
                             <img src="src/assets/img/arrow-right.png" alt="Букетное бюро">
                         </span>
-                    </p>
+                        </p>
+                    </a>
                 </div>
             </div>
             <div class="content-left d-dn" :class="$mq">
@@ -640,7 +642,8 @@
             margin-bottom: 2vh;
         }
     }
-    #card {
+     a #card {
+         cursor: pointer;
         &.mobile {
             width: 90%;
             border: 1px solid #dacfb1;
@@ -648,7 +651,7 @@
             padding: 5%;
         }
     }
-    #card .arrow-element {
+    a #card .arrow-element {
         &.mobile {
             display: none;
         }

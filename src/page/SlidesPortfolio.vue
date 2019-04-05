@@ -10,9 +10,9 @@
             <div class="slide-container" :class="$mq">
                 <swiper :options="swiperOption">
                     <transition name="text-anim" mode="out-in">
-                        <swiper-slide>
+                        <!--<swiper-slide>-->
                             <span class="slides_text" :class="$mq" :key="'headText' + currentNumber">{{ data.portfolioSlides[currentNumber].header.backgroundText }}</span>
-                        </swiper-slide>
+                        <!--</swiper-slide>-->
                     </transition>
                 </swiper>
             </div>
@@ -79,7 +79,6 @@
                 <div class="div-around"></div>
             </div>
         </div>
-
         <info v-show="showInfo" class="animated fadeIn"></info>
         <album v-show="showAlbum"></album>
     </div>
@@ -803,46 +802,46 @@
                                 mainText: 'main text',
                             }
                         },
-                        {
-                            header: {
-                                caption: 'Ритуальная флористика',
-                                photo: 'src/assets/img/portfolio-slider6.jpg',
-                                backgroundText: 'Funeral'
-                            },
-                            photos: [
-                                {
-                                    src: 'src/assets/img/portfolio-gallery/24.jpg',
-                                    hoverSrc: 'src/assets/img/portfolio-gallery/h24.jpg',
-                                    catalog: 'РИТУАЛЬНАЯ ФЛОРИСТИКА',
-                                    name: '???'
-                                },
-
-                            ],
-                            info: {
-                                header: 'header text',
-                                mainText: 'main text',
-                            }
-                        },
-                        {
-                            header: {
-                                caption: 'Мастер-классы',
-                                photo: 'src/assets/img/portfolio-slider6.jpg',
-                                backgroundText: 'Workshops'
-                            },
-                            photos: [
-                                {
-                                    src: 'src/assets/img/portfolio-gallery/51.jpg',
-                                    hoverSrc: 'src/assets/img/portfolio-gallery/h51.jpg',
-                                    catalog: 'МАСТЕР-КЛАССЫ',
-                                    name:  '???'
-                                }
-
-                            ],
-                            info: {
-                                header: 'header text',
-                                mainText: 'main text',
-                            }
-                        },
+                        // {
+                        //     header: {
+                        //         caption: 'Ритуальная флористика',
+                        //         photo: 'src/assets/img/portfolio-slider6.jpg',
+                        //         backgroundText: 'Funeral'
+                        //     },
+                        //     photos: [
+                        //         {
+                        //             src: 'src/assets/img/portfolio-gallery/24.jpg',
+                        //             hoverSrc: 'src/assets/img/portfolio-gallery/h24.jpg',
+                        //             catalog: 'РИТУАЛЬНАЯ ФЛОРИСТИКА',
+                        //             name: '???'
+                        //         },
+                        //
+                        //     ],
+                        //     info: {
+                        //         header: 'header text',
+                        //         mainText: 'main text',
+                        //     }
+                        // },
+                        // {
+                        //     header: {
+                        //         caption: 'Мастер-классы',
+                        //         photo: 'src/assets/img/portfolio-slider6.jpg',
+                        //         backgroundText: 'Workshops'
+                        //     },
+                        //     photos: [
+                        //         {
+                        //             src: 'src/assets/img/portfolio-gallery/51.jpg',
+                        //             hoverSrc: 'src/assets/img/portfolio-gallery/h51.jpg',
+                        //             catalog: 'МАСТЕР-КЛАССЫ',
+                        //             name:  '???'
+                        //         }
+                        //
+                        //     ],
+                        //     info: {
+                        //         header: 'header text',
+                        //         mainText: 'main text',
+                        //     }
+                        // },
                     ],
                 },
                 currentNumber: 0,
@@ -948,11 +947,12 @@
         }
     }
     .image-slides {
-        width: 30%;
+        width: 24.7%;
         height: 65vh;
-        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         margin-top: 1vh;
-        transition: all 0.3s ease;
         &.mobile {
             width: 50%;
             height: 40vh;
@@ -989,12 +989,6 @@
             top: 72vh;
         }
     }
-    .myanim-enter-active {
-        animation: myanim cubic-bezier(.8,.8,1,1) 2s;
-    }
-    .myanim-leave-active {
-        animation: myanimout cubic-bezier(.8,.8,1,1) 2s;
-    }
     a.slide-a {
         display: flex;
         justify-content: center;
@@ -1010,43 +1004,58 @@
             height: 40px;
         }
     }
+    .myanim-enter-active {
+        animation: myanim ease-out 0.5s;
+    }
+    .myanim-leave-active {
+        animation: myanimout ease-out 0.5s;
+    }
     @keyframes myanim {
-        0% {
-            -webkit-clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
-            clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
-            transform: scale(1.2);
-        }
-        100% {
-            -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-            transform: scale(1);
 
+        from {
+            transform: translateX(200%);
+        }
+        to {
+            transform: translateX(0);
         }
     }
     @keyframes myanimout {
-        0% {
-            -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-            transform: scale(1);
+
+        from {
+            transform: translateX(0);
         }
-        100% {
-            -webkit-clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
-            clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
-            transform: scale(1.2);
+        to {
+            transform: translateX(-300%);
         }
+    }
+    .text-anim-enter-active {
+        animation: text-anim linear 0.5s;
+    }
+    .text-anim-leave-active {
+        animation: text-anim-out linear 0.5s;
     }
     @keyframes text-anim {
        0% {
-
+          opacity: 0;
        }
-
+        100% {
+            opacity: 1;
+        }
     }
-    .pageanim-enter-active {
-        animation: pageanim ease 1s;
+    @keyframes text-anim-out {
+        0% {
+            opacity: 1;
+        }
+        100% {
+           opacity: 0;
+        }
     }
-    .pageanim-leave-active {
-        animation: pageanimout ease 1s;
-    }
+    /*.pageanim-enter-active {*/
+        /*animation: pageanim ease 1s;*/
+    /*}*/
+    /*.pageanim-leave-active {*/
+        /*animation: pageanimout ease 1s;*/
+    /*}*/
     .portfolio-footer {
         display: flex;
         justify-content: space-between;
@@ -1063,7 +1072,7 @@
     }
     .see-album {
         position: absolute;
-        top: 77vh;
+        top: 77.5vh;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -1079,7 +1088,7 @@
         height: 140px;
         border-radius: 100%;
         border: 1px solid #dacfb1;
-       font-size: 14px;
+       font-size: 12px;
        &.mobile {
            width: 100px;
            height: 100px;
@@ -1094,7 +1103,7 @@
         align-items: center;
         height: 110px;
         width: 5px;
-        margin-top: -20px;
+        margin-top: -30px;
         &.mobile {
             margin-top: 5vh;
         }
@@ -1108,8 +1117,8 @@
         }
     }
     .see-album-circle {
-        width: 5px;
-        height: 5px;
+        width: 6px;
+        height: 6px;
         border: 1px solid #333333;
         background-color: transparent;
         border-radius: 100%;

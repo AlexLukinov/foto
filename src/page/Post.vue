@@ -1,6 +1,9 @@
 <template>
     <div class="page post-page" :class="$mq">
         <headerWidthBack></headerWidthBack>
+
+        <!--Статья отель Превысоковъ-->
+
         <div class="post-block block-height100" :class="$mq">
             <div class="post-block-width67" :class="$mq">
                 <div class="post-content-left" :class="$mq">
@@ -14,7 +17,9 @@
                     </div>
                 </div>
                 <div class="post-content-right text-end" :class="$mq">
-                    <p :class="$mq">Стильная съемка с невероятно модным фотографом <a href="#">Славой Владзимирской</a>. </p>
+                    <p class="pw125" :class="$mq">Стильная съемка с невероятно модным фотографом
+                        <a rel="nofollow" href="https://www.instagram.com/slava_vladzimirskaya">Славой Владзимирской</a>.
+                    </p>
                 </div>
             </div>
             <div class="slide_line" :class="$mq">
@@ -40,79 +45,41 @@
                     <img src="src/assets/img/portfolio-gallery/Previsokov/11.jpg" alt="" :class="$mq">
                 </div>
             </div>
-
-            <div class="slide_line" :class="$mq">
-                <span class="slide_line_span">02</span>
-                <div class="slide-progress"></div>
-                <span class="slide_line_span" >07</span>
-            </div>
-            <div class="scroll-element" :class="$mq">
-                <img src="src/assets/img/arrow-right.png" alt="Буектное бюро">
-                <div class="text-element">SCROLL</div>
-            </div>
         </div>
         <div class="post-block" :class="$mq">
             <div class="post-block-width67 post-block-height85" :class="$mq">
                 <div class="post-content-left vertical-center" :class="$mq">
                     <img src="src/assets/img/portfolio-gallery/Previsokov/7.jpg" alt="" :class="$mq">
-                </div>
-                <div class="post-content-right vertical-center" :class="$mq">
                     <div class="text-element author-photo author-photo-horizontal"
                          :class="$mq">Ph: Slava Vladzimirskaya</div>
+                </div>
+                <div class="post-content-right vertical-center" :class="$mq">
                     <img src="src/assets/img/portfolio-gallery/Previsokov/8.jpg" alt="" :class="$mq">
                 </div>
-            </div>
-
-            <div class="slide_line" :class="$mq">
-                <span class="slide_line_span">03</span>
-                <div class="slide-progress"></div>
-                <span class="slide_line_span" >07</span>
-            </div>
-            <div class="scroll-element" :class="$mq">
-                <img src="src/assets/img/arrow-right.png" alt="Буектное бюро">
-                <div class="text-element">SCROLL</div>
             </div>
         </div>
         <div class="post-block" :class="$mq">
             <div class="post-block-width80" :class="$mq">
-                <div class="post-content-left" :class="$mq">
+                <div class="post-content-left container-img" :class="$mq">
                     <img src="src/assets/img/portfolio-gallery/Previsokov/13.jpg" alt="" :class="$mq">
+                    <div class="text-element author-photo" :class="$mq">Ph: Slava Vladzimirskaya</div>
                 </div>
                 <div class="post-content-right text-center" :class="$mq">
-                    <p :class="$mq">Прекрасная локация с красивым и
+                    <p class="pw100" :class="$mq">Прекрасная локация с красивым и
                         элегантным классическим отелем в окружении ухоженной территории у самого моря.</p>
                 </div>
-            </div>
-
-            <div class="slide_line" :class="$mq">
-                <span class="slide_line_span">04</span>
-                <div class="slide-progress"></div>
-                <span class="slide_line_span" >07</span>
-            </div>
-            <div class="scroll-element" :class="$mq">
-                <img src="src/assets/img/arrow-right.png" alt="Буектное бюро">
-                <div class="text-element">SCROLL</div>
             </div>
         </div>
         <div class="post-block" :class="$mq">
             <div class="post-block-width67 post-block-height85" :class="$mq">
                 <div class="post-content-left vertical-center" :class="$mq">
                     <img src="src/assets/img/portfolio-gallery/Previsokov/5.jpg" alt="" :class="$mq">
-                </div>
-                <div class="post-content-right vertical-center" :class="$mq">
                     <div class="text-element author-photo author-photo-horizontal"
                          :class="$mq">Ph: Slava Vladzimirskaya</div>
+                </div>
+                <div class="post-content-right vertical-center" :class="$mq">
                     <img src="src/assets/img/portfolio-gallery/Previsokov/6.jpg" alt="" :class="$mq">
                 </div>
-            </div>
-            <div class="slide_line" :class="$mq">
-                <span class="slide_line_span">05</span>
-                <div class="slide-progress"></div>
-                <span class="slide_line_span" >07</span>
-            </div>
-            <div class="scroll-element" :class="$mq">
-                <img src="src/assets/img/arrow-right.png" alt="Буектное бюро">
-                <div class="text-element">SCROLL</div>
             </div>
         </div>
         <div class="post-block" :class="$mq">
@@ -128,16 +95,6 @@
                     <img src="src/assets/img/portfolio-gallery/Previsokov/3.jpg" alt="" :class="$mq">
                 </div>
             </div>
-
-            <div class="slide_line" :class="$mq">
-                <span class="slide_line_span">06</span>
-                <div class="slide-progress"></div>
-                <span class="slide_line_span" >07</span>
-            </div>
-            <div class="scroll-element" :class="$mq">
-                <img src="src/assets/img/arrow-right.png" alt="Буектное бюро">
-                <div class="text-element">SCROLL</div>
-            </div>
         </div>
         <div class="post-block block-height100" :class="$mq">
             <div class="post-block-width80" :class="$mq">
@@ -145,25 +102,16 @@
                     <div class="post-quote" :class="$mq">"Яркие и выразительные черты лица фотомодели
                         Евгении вдохновили нас на букет с листьями магнолии"</div>
                     <div class="post-info quote-info" :class="$mq">
-                        <div class="info" :class="$mq">Локиция: <a href="#">Отель Превысоковъ</a></div>
-                        <div class="info" :class="$mq">Платье: <a href="#">Marylin</a>
-                            Модель: <a href="">Евгения</a></div>
-                        <div class="info" :class="$mq">Фото: <a href="#">Слава Владзимирская</a></div>
+                        <div class="info" :class="$mq">Локация: <a rel="nofollow" href="http://previsokov.ru">Отель Превысоковъ</a></div>
+                        <div class="info" :class="$mq">Платье: <a rel="nofollow" href="http://salon-marylin.ru/">Marylin</a>
+                            Модель: <a a rel="nofollow" href="https://www.instagram.com/eugeniya.whitee">Евгения</a></div>
+                        <div class="info" :class="$mq">Фото: <a rel="nofollow" href="https://www.instagram.com/slava_vladzimirskaya/">Слава Владзимирская</a></div>
                     </div>
                 </div>
                 <div class="post-content-right text-end" :class="$mq">
                     <p :class="$mq">По вопросам сотрудничества для фото и видео съемок,
-                        присылайте запрос на нашу почту <a href="#">buketnoe_buro@mail.ru</a></p>
+                        присылайте запрос на нашу почту <a rel="nofollow" href="#">buketnoe_buro@mail.ru</a></p>
                 </div>
-            </div>
-            <div class="slide_line" :class="$mq">
-                <span class="slide_line_span">07</span>
-                <div class="slide-progress"></div>
-                <span class="slide_line_span" >07</span>
-            </div>
-            <div class="scroll-element" :class="$mq">
-                <img src="src/assets/img/arrow-left.png" alt="Буектное бюро">
-                <div class="text-element">TO TOP</div>
             </div>
         </div>
         <div class="arrow-box" :class="$mq">
@@ -181,6 +129,343 @@
                 <img src="src/assets/img/previu.png" :class="$mq" alt="Буектное бюро">
         </div>
     </div>
+        <!--конец статьи отель Превысоковъ-->
+
+        <!--Статья Дмитрий и Викторияю Осеннее вдохновение-->
+
+        <!--<div class="post-block block-height100" :class="$mq">-->
+            <!--<div class="post-block-width67" :class="$mq">-->
+                <!--<div class="post-content-left" :class="$mq">-->
+                    <!--<div class="name-page" :class="$mq">BLOG > НАШИ ИСТОРИИ</div>-->
+                    <!--<div class="post-name" :class="$mq">Дмитрий &-->
+                        <!--Виктория. Осеннее вдохновение</div>-->
+                    <!--<div class="post-info" :class="$mq">-->
+                        <!--<div class="date">17.01.2019</div>-->
+                        <!--<div class="share">-->
+                            <!--Поделиться: <span><i class="fas fa-share-alt"></i></span>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="post-content-right text-end" :class="$mq">-->
+                    <!--<p class="pw125" :class="$mq">Эта история с камином состоялась в ясный ноябрьский день,-->
+                        <!--когда солнце еще немного теплое и природа-->
+                        <!--в Крыму наполнилась оттенками желтого и охры.-->
+                    <!--</p>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="slide_line" :class="$mq">-->
+                <!--<span class="slide_line_span">01</span>-->
+                <!--<div class="slide-progress"></div>-->
+                <!--<span class="slide_line_span" >07</span>-->
+            <!--</div>-->
+            <!--<div class="scroll-element" :class="$mq">-->
+                <!--<img src="src/assets/img/arrow-right.png" alt="Буектное бюро">-->
+                <!--<div class="text-element">SCROLL</div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="post-block" :class="$mq">-->
+            <!--<div class="post-block-width67 post-block-height85" :class="$mq">-->
+                <!--<div class="post-content-left vertical-center" :class="$mq">-->
+                    <!--<img src="src/assets/img/portfolio-gallery/Osen/1.jpg" alt="" :class="$mq">-->
+                    <!--<div class="text-element author-photo author-photo-horizontal"-->
+                         <!--:class="$mq">Ph: Marina Sheyanova </div>-->
+                <!--</div>-->
+                <!--<div class="post-content-right vertical-center" :class="$mq">-->
+                    <!--<img src="src/assets/img/portfolio-gallery/Osen/2.jpg" alt="" :class="$mq">-->
+                <!--</div>-->
+            <!--</div>            -->
+        <!--</div>-->
+        <!--<div class="post-block" :class="$mq">-->
+            <!--<div class="post-block-width80" :class="$mq">-->
+                <!--<div class="post-content-left text-center" :class="$mq">-->
+                    <!--<p :class="$mq">Вдохновленные лесными мотивами и влюбленные-->
+                        <!--в камины как в арт-объекты мы создали струящуюся мягкую осеннюю флористику.</p>-->
+                <!--</div>-->
+                <!--<div class="post-content-right vertical-end container-img" :class="$mq">-->
+                    <!--<div class="text-element author-photo" :class="$mq">Ph: Marina Sheyanova</div>-->
+                    <!--<img src="src/assets/img/portfolio-gallery/Osen/7.jpg" alt="" :class="$mq">-->
+                <!--</div>-->
+            <!--</div>            -->
+        <!--</div>-->
+        <!--<div class="post-block block-double-text" :class="$mq">-->
+            <!--<div class="post-block-width67 post-block-height85" :class="$mq">-->
+                <!--<div class="post-content-left" :class="$mq">-->
+                    <!--<p :class="$mq">Здесь переплелись воедино ветки акации и рябины с их резными листьями, садовые розы кремовых-->
+                        <!--оттенков, шиповник, метелки тростника, различные травы и полевые растения.</p>-->
+                <!--</div>-->
+                <!--<div class="post-content-right" :class="$mq">-->
+                    <!--<p :class="$mq">Обрамляющей и ниспадающей флористикой нам хотелось добиться ощущения,-->
+                        <!--что камин стал частью осенней природы с ее опавшими листьями и полутонами.</p>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="post-block" :class="$mq">-->
+            <!--<div class="post-block-width67 post-block-height85" :class="$mq">-->
+                <!--<div class="post-content-left vertical-center" :class="$mq">-->
+                    <!--<img src="src/assets/img/portfolio-gallery/Osen/love_029-1.jpg" alt="" :class="$mq">-->
+                    <!--<div class="text-element author-photo author-photo-horizontal"-->
+                         <!--:class="$mq">Ph: Marina Sheyanova</div>-->
+                <!--</div>-->
+                <!--<div class="post-content-right vertical-center" :class="$mq">-->
+                    <!--<img src="src/assets/img/portfolio-gallery/Osen/love_002-1.jpg" alt="" :class="$mq">-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="post-block block-double-text" :class="$mq">-->
+            <!--<div class="post-block-width67 post-block-height85" :class="$mq">-->
+                <!--<div class="post-content-left" :class="$mq">-->
+                    <!--<p :class="$mq">Роскошным акцентом в декоре мы обозначили бронзовые каминные часы и канделябр со-->
+                        <!--свечами теплого карамельного оттенка. Их мягкий свет особенно очарователен.</p>-->
+                <!--</div>-->
+                <!--<div class="post-content-right" :class="$mq">-->
+                    <!--<p :class="$mq">Наше эстетическое эго удовлетворилось сполна, когда в кадре появилась Вика в дизайнерском струящемся платье, с авторским украшением в волосах, мягким макияжем и прической.-->
+                        <!--Небольшой букетик из почти невесомого ковыля подчеркнул образ девушки. Скорее нимфы.</p>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="post-block" :class="$mq">-->
+            <!--<div class="post-block-width80" :class="$mq">-->
+                <!--<div class="post-content-left container-img" :class="$mq">-->
+                    <!--<img src="src/assets/img/portfolio-gallery/Osen/love_064.jpg" alt="" :class="$mq">-->
+                    <!--<div class="text-element author-photo" :class="$mq">Ph: Marina Sheyanova</div>-->
+                <!--</div>-->
+                <!--<div class="post-content-right text-center" :class="$mq">-->
+                    <!--<p :class="$mq">Элегантная каллиграфия от талантливого Крымского-->
+                        <!--<a rel="nofollow" href="https://www.instagram.com/vmeste_calligraphy"">каллиграфиста</a>-->
+                        <!--дополнила эту ноябрьскую историю.-->
+                        <!--Читать признания в любви при свечах – что еще может быть романтичнее.</p>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="post-block block-height100" :class="$mq">-->
+            <!--<div class="post-block-width80" :class="$mq">-->
+                <!--<div class="post-content-right text-end" :class="$mq">-->
+                    <!--<p :class="$mq">Любое искусство, в том числе декораторское и флористика,-->
+                        <!--направлено на то, чтобы вызвать определенные эмоции. Здесь это из серии утонченности,-->
+                        <!--выразительности, самобытности, загадки и ноток осеннего сплина. Не так ли ?</p>-->
+                <!--</div>-->
+                <!--<div class="post-content-left" :class="$mq">-->
+                    <!--<div class="post-quote" :class="$mq">"Нам хотелось добиться ощущения,-->
+                        <!--что камин стал частью осенней природы "</div>-->
+                    <!--<div class="post-info quote-info" :class="$mq">-->
+                        <!--<div class="info" :class="$mq">Локация: Guest house-->
+                            <!--<a rel="nofollow" href="http://gh.voyage-sv.ru">“VoyageSV”</a>-->
+                        <!--</div>-->
+                        <!--<div class="info" :class="$mq">Платье:-->
+                            <!--<a rel="nofollow" href="https://www.instagram.com/masha_schwartz">Маша Шварц-->
+                            <!--</a>-->
+                        <!--</div>-->
+                        <!--<div class="info" :class="$mq">Макияж:-->
+                            <!--<a rel="nofollow" href="https://www.instagram.com/natalya_visag">Асатурян Наталья</a>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="post-info quote-info" :class="$mq">-->
+                        <!--<div class="info" :class="$mq">Аксессуары:-->
+                            <!--<a rel="nofollow" href="https://www.instagram.com/dellabellagioielli">Della Bella Gioielli</a>-->
+                        <!--</div>-->
+                        <!--<div class="info" :class="$mq">Каллиграфия:-->
+                            <!--<a rel="nofollow" href="https://www.instagram.com/vmeste_calligraphy"> Vmeste Calligraphy</a>-->
+                        <!--</div>-->
+                        <!--<div class="info" :class="$mq">Фото:-->
+                            <!--<a rel="nofollow" href="https://www.instagram.com/marina_sheyanova">Мария Шиянова</a>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="arrow-box" :class="$mq">-->
+            <!--<div class="arrow-around arrow-rotate" @click="prev">-->
+                <!--<div class="div-around"></div>-->
+                <!--<img class="arrow arrow-left" src="src/assets/img/arrow-left.png" alt="Буектное бюро">-->
+            <!--</div>-->
+            <!--<button :class="$mq">Смотреть больше фото</button>-->
+            <!--<div class="arrow-around arrow-rotate" @click="next">-->
+                <!--<img class="arrow arrow-right" src="src/assets/img/arrow-right.png" alt="Буектное бюро">-->
+                <!--<div class="div-around"></div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="footer-img" :class="$mq">-->
+            <!--<img src="src/assets/img/previu.png" :class="$mq" alt="Буектное бюро">-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--конец статьи осень-->
+
+    <!--Статья Долина Гор-->
+        <!--<div class="post-block block-height100" :class="$mq">-->
+            <!--<div class="post-block-width67" :class="$mq">-->
+                <!--<div class="post-content-left" :class="$mq">-->
+                    <!--<div class="name-page" :class="$mq">BLOG > НАШИ ИСТОРИИ</div>-->
+                    <!--<div class="post-name" :class="$mq">Николай & Снежана.-->
+                        <!--Долина Гор.-->
+                    <!--</div>-->
+                    <!--<div class="post-info" :class="$mq">-->
+                        <!--<div class="date">6 Октября 2018</div>-->
+                        <!--<div class="share">-->
+                            <!--Поделиться: <span><i class="fas fa-share-alt"></i></span>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="post-content-right text-end" :class="$mq">-->
+                    <!--<p class="pw125" :class="$mq">Байдарская долина – удивительное и необычайно красивое место,-->
+                        <!--которое по праву называют «Крымской мини-Швейцарией».-->
+                    <!--</p>-->
+                    <!--<p class="pw125" :class="$mq">-->
+                        <!--Николай и Снежана – это история о чистых чувствах, о словах без слов, о мягкости и кротости.-->
+                    <!--</p>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="slide_line" :class="$mq">-->
+                <!--<span class="slide_line_span">01</span>-->
+                <!--<div class="slide-progress"></div>-->
+                <!--<span class="slide_line_span">07</span>-->
+            <!--</div>-->
+            <!--<div class="scroll-element" :class="$mq">-->
+                <!--<img src="src/assets/img/arrow-right.png" alt="Буектное бюро">-->
+                <!--<div class="text-element">SCROLL</div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="post-block" :class="$mq">-->
+            <!--<div class="post-block-width67 post-block-height85" :class="$mq">-->
+                <!--<div class="post-content-left vertical-center" :class="$mq">-->
+                    <!--<img src="src/assets/img/portfolio-gallery/DolinaGor/5.jpg" alt="" :class="$mq">-->
+                    <!--<div class="text-element author-photo author-photo-horizontal"-->
+                         <!--:class="$mq">Ph: Alexander Santi-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="post-content-right vertical-center" :class="$mq">-->
+                    <!--<img src="src/assets/img/portfolio-gallery/DolinaGor/61.jpg" alt="" :class="$mq">-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="post-block" :class="$mq">-->
+            <!--<div class="post-block-width80" :class="$mq">-->
+                <!--<div class="post-content-left text-center" :class="$mq">-->
+                    <!--<p :class="$mq">«Свадьба для двоих» в таком очаровательном-->
+                        <!--и волшебном окружении гор - прекрасное воспоминание на долгие годы.-->
+                    <!--</p>-->
+                <!--</div>-->
+                <!--<div class="post-content-right vertical-end container-img" :class="$mq">-->
+                    <!--<div class="text-element author-photo" :class="$mq">Ph: Alexander Santi</div>-->
+                    <!--<img src="src/assets/img/portfolio-gallery/DolinaGor/12.jpg" alt="" :class="$mq">-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="post-block" :class="$mq">-->
+            <!--<div class="post-block-width80" :class="$mq">-->
+                <!--<div class="post-content-left container-img" :class="$mq">-->
+                    <!--<img src="src/assets/img/portfolio-gallery/DolinaGor/16.jpg" alt="" :class="$mq">-->
+                    <!--<div class="text-element author-photo" :class="$mq">Ph: Alexander Santi</div>-->
+                <!--</div>-->
+                <!--<div class="post-content-right text-center" :class="$mq">-->
+                    <!--<p class="pw100" :class="$mq">Акцентная флористика от БУКЕТНОГО БЮРО в абсолютно легкой и искренней-->
+                        <!--церемонии. Сухие травы, садовые розы, мелкие ягоды чернильных тонов.-->
+                        <!--Все то, что тонко и деликатно вписывается в окружающую панораму.</p>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="post-block" :class="$mq">-->
+            <!--<div class="post-block-width67 post-block-height85" :class="$mq">-->
+                <!--<div class="post-content-left vertical-center" :class="$mq">-->
+                    <!--<img src="src/assets/img/portfolio-gallery/DolinaGor/9.jpg" alt="" :class="$mq">-->
+                    <!--<div class="text-element author-photo author-photo-horizontal"-->
+                         <!--:class="$mq">Ph: Alexander Santi-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="post-content-right vertical-center" :class="$mq">-->
+                    <!--<img src="src/assets/img/portfolio-gallery/DolinaGor/10.jpg" alt="" :class="$mq">-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="post-block" :class="$mq">-->
+            <!--<div class="post-block-width80" :class="$mq">-->
+                <!--<div class="post-content-left text-center" :class="$mq">-->
+                    <!--<p :class="$mq">Эмоции, прикосновения, объятия, шепот ветра.-->
+                        <!--Только искренние слова. Женская щека на мужском плече.-->
+                        <!--Рука в руке. Любовь и Вечность.-->
+                    <!--</p>-->
+                    <!--<p :class="$mq">Букетик для Снежаны под стать ей самой - женственный и изящный.-->
+                        <!--Веточки ковыля навстречу ласковому ветру, сухоцветы и садовая роза в едином аромате.-->
+                    <!--</p>-->
+                <!--</div>-->
+                <!--<div class="post-content-right vertical-end container-img" :class="$mq">-->
+                    <!--<div class="text-element author-photo" :class="$mq">Ph: Alexander Santi</div>-->
+                    <!--<img src="src/assets/img/portfolio-gallery/DolinaGor/6.jpg" alt="" :class="$mq">-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="post-block" :class="$mq">-->
+            <!--<div class="post-block-width80" :class="$mq">-->
+                <!--<div class="post-content-left container-img" :class="$mq">-->
+                    <!--<img src="src/assets/img/portfolio-gallery/DolinaGor/23.jpg" alt="" :class="$mq">-->
+                    <!--<div class="text-element author-photo" :class="$mq">Ph: Alexander Santi</div>-->
+                <!--</div>-->
+                <!--<div class="post-content-right text-center" :class="$mq">-->
+                    <!--<p class="pw100" :class="$mq">И сразу после церемонии романтический ужин в красоте долины.</p>-->
+
+                    <!--<p :class="$mq">Детально выверенная сервировка с элементами авторского декора.-->
+                        <!--Графитового цвета свечи, золото и вкусный торт.-->
+                    <!--</p>-->
+                    <!--<p :class="$mq">-->
+                        <!--Эти мгновения навсегда в душе и сердце обоих.-->
+                        <!--А также всей дружной команды свадебных профессионалов с организатором Big Day Crimea во главе.-->
+                    <!--</p>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="post-block block-height100" :class="$mq">-->
+            <!--<div class="post-block-width80" :class="$mq">-->
+                <!--<div class="post-content-right text-end" :class="$mq">-->
+                    <!--<p :class="$mq">Хотите узнать больше о «секретных» местах для свадебной церемонии наедине с-->
+                        <!--природой?-->
+                        <!--Желаете оформить ее со вкусом и вниманием к деталям? Мы с радостью поможем Вам.-->
+                    <!--</p>-->
+                <!--</div>-->
+                <!--<div class="post-content-left" :class="$mq">-->
+                    <!--<div class="post-quote" :class="$mq">"Сухие травы, садовые розы, мелкие ягоды чернильных тонов."-->
+                    <!--</div>-->
+                    <!--<div class="post-info quote-info" :class="$mq">-->
+                        <!--<div class="info" :class="$mq">Локация:-->
+                            <!--<a rel="nofollow" href="https://ru.wikipedia.org/wiki/Байдарская_долина">Байдарская Долина</a>-->
+                        <!--</div>-->
+                        <!--<div class="info" :class="$mq">Организатор:-->
+                            <!--<a rel="nofollow" href="http://bigday-crimea.ru/">Big Day Сrimea</a>-->
+                        <!--</div>-->
+                        <!--<div class="info" :class="$mq">Фото:-->
+                            <!--<a rel="nofollow" href="https://alexandersanti.com/">Alexander Santi</a>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="post-block" :class="$mq">-->
+            <!--<div class="post-block-width67 post-block-height85" :class="$mq">-->
+                <!--<div class="post-content-left vertical-center" :class="$mq">-->
+                    <!--<img src="src/assets/img/portfolio-gallery/DolinaGor/1.jpg" alt="" :class="$mq">-->
+                    <!--<div class="text-element author-photo author-photo-horizontal"-->
+                         <!--:class="$mq">Ph: Alexander Santi-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="post-content-right vertical-center" :class="$mq">-->
+                    <!--<img src="src/assets/img/portfolio-gallery/DolinaGor/3.jpg" alt="" :class="$mq">-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="arrow-box" :class="$mq">-->
+            <!--<div class="arrow-around arrow-rotate" @click="prev">-->
+                <!--<div class="div-around"></div>-->
+                <!--<img class="arrow arrow-left" src="src/assets/img/arrow-left.png" alt="Буектное бюро">-->
+            <!--</div>-->
+            <!--<button :class="$mq">Смотреть больше фото</button>-->
+            <!--<div class="arrow-around arrow-rotate" @click="next">-->
+                <!--<img class="arrow arrow-right" src="src/assets/img/arrow-right.png" alt="Буектное бюро">-->
+                <!--<div class="div-around"></div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="footer-img" :class="$mq">-->
+            <!--<img src="src/assets/img/previu.png" :class="$mq" alt="Буектное бюро">-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--конец статьи Долина Гор-->
 </template>
 <script>
     export default {
@@ -200,6 +485,9 @@
         &.mobile {
             height: auto;
         }
+    }
+    .block-double-text {
+        height: 50vh;
     }
     .block-height100 {
         height: 100vh;
@@ -239,7 +527,7 @@
         justify-content: flex-start;
         width: 50%;
         height: 100%;
-        overflow: hidden;
+        /*overflow: hidden;*/
         position: relative;
         &.mobile {
             width: 100%;
@@ -255,7 +543,7 @@
     }
     .post-name, .post-quote {
         font-family: $font-h2;
-        font-size: 3vw;
+        font-size: 2.9vw;
         color: #333333;
         text-align: left;
         width: 80%;
@@ -268,7 +556,7 @@
         }
     }
     .post-quote {
-        font-family: $blog-p;
+        font-family: 'CasusBook';
         font-size: 2.3vw;
         &.mobile {
             font-size: 3.5vh;
@@ -289,6 +577,7 @@
     }
     .quote-info {
         width: 100%;
+        margin-bottom: 1vh;
         &.mobile {
             flex-direction: column;
             align-items: flex-start;
@@ -296,7 +585,7 @@
     }
     .info {
         text-align: left;
-        width: 25%;
+        width: 26%;
         line-height: 2;
         &.mobile {
             width: 100%;
@@ -309,7 +598,7 @@
         }
     }
     .post-block-width80 .post-content-right img, .post-block-width80 .post-content-left img {
-        width: 75%;
+        width: 85%;
         &.mobile {
             width: 100%;
         }
@@ -321,9 +610,9 @@
         align-items: center;
         height: 15%;
         min-height: 130px;
-        position: absolute;
+        position: fixed;
         left: 4%;
-        top: 49vh;
+        top: 45vh;
         width: 20px;
         &.mobile {
             display: none;
@@ -348,9 +637,9 @@
         justify-content: space-around;
         align-items: center;
         transform: rotate(90deg);
-        position: absolute;
+        position: fixed;
         right: 0;
-        bottom: 8vh;
+        bottom: 10vh;
         height: max-content;
         &.mobile {
             display: none;
@@ -378,7 +667,7 @@
     .footer-img img {
         width: 18%;
         margin: 8vh;
-        &.sm {
+        &.mobile {
             width: 35%;
             margin: 2vh;
         }
@@ -398,7 +687,22 @@
     }
     p {
         font-family: $blog-p;
-
+        width: 90%;
+        &.mobile {
+            width: 100%;
+        }
+    }
+    .pw125 {
+        width: 125%;
+        &.mobile {
+            width: 100%;
+        }
+    }
+    .pw100 {
+        width: 100%;
+        &.mobile {
+            width: 100%;
+        }
     }
     .vertical-end {
         align-items: flex-end;
@@ -407,26 +711,29 @@
         align-items: center;
     }
     .author-photo {
-        position: absolute;
         font-size: 1vw;
-        text-align: left;
         color: #333333;
         transform: rotate(-90deg);
         white-space: nowrap;
         letter-spacing: 0;
-        top: 10vh;
-        left: 3vw;
+        width: 3%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
         &.mobile {
             display: none;
         }
     }
     .container-img {
-        position: relative;
+       justify-content: space-evenly;
+        flex-direction: row;
+        align-items: flex-end;
     }
     .author-photo-horizontal {
         transform: rotate(0deg);
-        top: 90%;
-        left: 66.5%;
+        align-self: flex-start;
+        margin-left: 1vw;
+        margin-top: 2vh;
     }
     .arrow-box {
         display: flex;
@@ -444,7 +751,7 @@
         font-family: $blog-p;
         font-size: 0.9vw;
         border: 1px solid #dacfb1;
-        &.sm {
+        &.mobile {
             width: 160px;
             height: 60px;
             font-size: 2.2vh;
